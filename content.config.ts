@@ -2,6 +2,10 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content';
 
 export default defineContentConfig({
   collections: {
+    static: defineCollection({
+      type: 'page',
+      source: 'static/**/*.md'
+    }),
     seo: defineCollection({
       type: 'data',
       source: 'seo/**.json',
