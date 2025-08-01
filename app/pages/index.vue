@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 const { t, locale } = useI18n();
 
-const { data: seo } = await useLazyAsyncData('content-landing-seo', () => {
-  return queryCollection('landing').where('stem', '=', 'landing/seo').first();
+const { data: seo } = await useLazyAsyncData('content-seo-home', () => {
+  return queryCollection('seo').where('stem', '=', 'seo/home').first();
 });
 
 const title = computed(() => seo.value?.content.title[locale.value]);
@@ -21,6 +21,7 @@ useSeoMeta({
     <h1 class="text-4xl font-bold">{{ t('THE_QUESTION') }}</h1>
     <ButtonColorMode />
     <ButtonLangSwitcher />
+
     <pre>{{ seo?.content.description[locale] }}</pre>
   </div>
 </template>
