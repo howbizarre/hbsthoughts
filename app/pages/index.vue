@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { t, locale } = useI18n();
 
-const { data: seo } = await useAsyncData('content-landing-seo', () => {
+const { data: seo } = await useLazyAsyncData('content-landing-seo', () => {
   return queryCollection('landing').where('stem', '=', 'landing/seo').first();
 });
 
