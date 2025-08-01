@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineNuxtConfig({
   ssr: true,
 
@@ -6,7 +7,7 @@ export default defineNuxtConfig({
     payloadExtraction: false // optimize for SSR
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxt/content'],
+  modules: ['nitro-cloudflare-dev', '@nuxtjs/i18n', '@nuxt/content'],
 
   css: ['~/assets/css/main.css'],
 
@@ -22,7 +23,8 @@ export default defineNuxtConfig({
   vite: {
     build: {
       sourcemap: false
-    }
+    },
+    plugins: [tailwindcss()]
   },
 
   i18n: {
