@@ -1,10 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  ssr: true,
+
+  experimental: {
+    payloadExtraction: false // optimize for SSR
+  },
+
+  modules: ['nitro-cloudflare-dev', '@nuxt/ui'],
+
+  css: ['~/assets/css/main.css'],
 
   nitro: {
-    preset: "cloudflare_module",
+    preset: 'cloudflare_module',
 
     cloudflare: {
       deployConfig: true,
@@ -12,5 +19,12 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ["nitro-cloudflare-dev"]
-})
+  vite: {
+    build: {
+      sourcemap: false
+    }
+  },
+
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: false }
+});
