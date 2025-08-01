@@ -19,7 +19,6 @@ useSeoMeta({
 <template>
   <div>
     <h1 class="text-4xl font-bold">{{ t('THE_QUESTION') }}</h1>
-
     <pre>{{ seo?.content.description[locale] }}</pre>
   </div>
 </template>

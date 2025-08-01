@@ -1,11 +1,12 @@
 <template>
-  <div>
+    <UContainer>
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/help">Help</NuxtLink>
+    <ButtonColorMode />
     <ButtonLangSwitcher />
 
-    <main>
-      <slot />
-    </main>
-  </div>
+      <main class="flex-1">
+        <slot />
+      </main>
+  </UContainer>
 </template>

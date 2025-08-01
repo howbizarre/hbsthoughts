@@ -9,8 +9,12 @@ watch(locale, () => useHead({ htmlAttrs: { lang: locale.value } }));
 
 <template>
   <template v-for="locale in availableLocales" :key="locale.code">
-    <NuxtLink :to="switchLocalePath(locale.code)">
+    <UButton :to="switchLocalePath(locale.code)"
+             icon="i-heroicons-language"
+             size="md"
+             color="neutral"
+             variant="ghost">
       {{ locale.name }}
-    </NuxtLink>
+    </UButton>
   </template>
 </template>
