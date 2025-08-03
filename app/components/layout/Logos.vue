@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n();
 const localePath = useLocalePath();
 const path = computed(() => localePath('/'));
 const logo = ref<HTMLElement | null>(null);
@@ -44,7 +45,7 @@ onMounted(() => doRound());
           </NuxtLink>
         </div>
 
-        <p class="text-gray-500">If the Universe Is the Answer, What Is the Question?!</p>
+        <p class="text-gray-500">{{ t('THE_QUESTION') }}</p>
       </div>
     </div>
   </div>

@@ -18,13 +18,13 @@ useHead({
 
 <template>
   <UContainer>
-    <NuxtLink :to="localePath ('/')">Home</NuxtLink>
-    <NuxtLink :to="localePath ('/help')">Help</NuxtLink>
-    <ButtonColorMode />
-    <ButtonLangSwitcher />
+    <LayoutLogos />
+    <LayoutHeader />
 
-    <main class="flex-1">
+    <main class="max-w-3xl mx-auto content">
       <slot />
     </main>
+
+    <LayoutFooter />
   </UContainer>
 </template>
