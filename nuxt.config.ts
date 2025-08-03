@@ -10,6 +10,10 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  app: {
+    pageTransition: { name: 'slide-left', mode: 'out-in' }
+  },
+
   nitro: {
     preset: 'cloudflare_module',
 
