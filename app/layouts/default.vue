@@ -1,7 +1,25 @@
+<script setup lang="ts">
+const localePath = useLocalePath();
+
+const i18nHead = useLocaleHead({
+  seo: true,
+  lang: true,
+});
+
+useHead({
+  titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | HB's Thoughts` : "How Bizarre's Thoughts",
+  htmlAttrs: {
+    lang: i18nHead.value.htmlAttrs!.lang
+  },
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])]
+});
+</script>
+
 <template>
   <UContainer>
-    <NuxtLink to="/">Home</NuxtLink>
-    <NuxtLink to="/help">Help</NuxtLink>
+    <NuxtLink :to="localePath ('/')">Home</NuxtLink>
+    <NuxtLink :to="localePath ('/help')">Help</NuxtLink>
     <ButtonColorMode />
     <ButtonLangSwitcher />
 
