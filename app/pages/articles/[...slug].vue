@@ -10,7 +10,7 @@ const { data: article } = await useLazyAsyncData(route.path, () => {
 </script>
 
 <template>
-  <article class="rounded-2xl mb-4 prose prose-lg dark:prose-invert">
-    <ContentRenderer v-if="article" :value="article" />
+  <article class="rounded-2xl mb-4">
+    <ContentRenderer v-if="article" :value="article" class="prose dark:prose-invert max-w-full px-4 lg:px-2" />
   </article>
 </template>

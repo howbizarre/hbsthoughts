@@ -40,7 +40,8 @@ export default defineNuxtConfig({
     },
     server: {
       hmr: {
-        clientPort: 7410 // или друг порт
+        clientPort: 7410,
+        port: 7410
       }
     }
   },
@@ -80,10 +81,7 @@ export default defineNuxtConfig({
     build: {
       markdown: {
         highlight: {
-          theme: {
-            default: 'github-light',
-            dark: 'github-dark'
-          }
+          theme: 'github-dark'
         }
       }
     }
