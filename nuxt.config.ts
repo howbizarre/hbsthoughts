@@ -76,6 +76,19 @@ export default defineNuxtConfig({
     }
   },
 
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark'
+          }
+        }
+      }
+    }
+  },
+
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false }
 });
