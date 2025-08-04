@@ -17,6 +17,7 @@ const isDark = computed({
              @click="isDark = !isDark"
              color="neutral"
              variant="ghost"
+             size="sm"
              class="cursor-pointer" />
 
     <template #fallback>

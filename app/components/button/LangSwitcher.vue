@@ -11,7 +11,7 @@ watch(locale, () => useHead({ htmlAttrs: { lang: locale.value } }));
   <template v-for="locale in availableLocales" :key="locale.code">
     <UButton :to="switchLocalePath(locale.code)"
              icon="i-heroicons-language"
-             size="md"
+             size="sm"
              color="neutral"
              variant="ghost">
       {{ locale.name }}
