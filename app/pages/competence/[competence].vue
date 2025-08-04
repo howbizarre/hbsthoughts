@@ -1,12 +1,24 @@
 <script setup lang="ts">
 const { locale, t } = useI18n();
-const localePath = useLocalePath();
-const path = computed(() => localePath('/articles'));
 const route = useRoute();
 const { competence } = route.params;
 
+const { data: competenceData } = await useLazyAsyncData(
+  () => `competence-${locale.value}-${competence}`,
+  async () => {
+    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+
+    return await queryCollection(`${collectionName}`)
+      .where('competence', 'LIKE', `%${competence}%`)
+      .order('date', 'DESC')
+      .all();
+  }, {
+  server: true,
+  watch: [locale]
+});
+
 const pageCompetence = t((`COMPETENCE_${(competence)}`).toUpperCase());
-const pageTitle = `${t('LBL_COMPETENCE')} - ${pageCompetence}`;
+const pageTitle = `${pageCompetence} ${t('LBL_COMPETENCE')}`;
 
 const description = {
   "bg": `Компетентността '${pageCompetence}' е показател, колко технически насочена е статията. От простичка, без технически детайли, до много професионална.`,
@@ -25,6 +37,8 @@ useHead({
       {{ pageTitle }}
     </h1>
 
-    <div class="excerpt-card text-center">{{ t("LBL_COMPETENCIES") }}</div>
+    <div v-for="value in competenceData" :key="value.date" class="rounded-2xl mb-4">
+      <ArticleExcerpt :doc="value" />
+    </div>
   </div>
 </template>

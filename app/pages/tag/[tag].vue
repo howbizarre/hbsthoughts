@@ -1,13 +1,27 @@
 <script setup lang="ts">
 const { locale, t } = useI18n();
-const localePath = useLocalePath();
-const path = computed(() => localePath('/articles'));
 
 const route = useRoute();
 const { tag } = route.params;
 
+const { data: tagData } = await useLazyAsyncData(
+  () => `tag-${locale.value}-${tag}`,
+  async () => {
+    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+
+    const allResults = await queryCollection(`${collectionName}`)
+      .where('tags', 'LIKE', `%${tag}%`)
+      .order('date', 'DESC')
+      .all();
+      
+    return allResults.filter(item => Array.isArray(item.tags) && item.tags.includes(`${tag}`));
+  }, {
+  server: true,
+  watch: [locale]
+});
+
 const pageTag = t((`TAG_${(tag)}`).toUpperCase());
-const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
+const pageTitle = `${pageTag} ${t('LBL_TAG')}`;
 const description = {
   "bg": `Тагът '${pageTag}' е ключова дума за лесно филтриране на статиите по тематики.`,
   "en": `The tag '${pageTag}' is a keyword for easy filtering of articles by topics.`
@@ -25,10 +39,8 @@ useHead({
       {{ pageTitle }}
     </h1>
 
-    <div class="excerpt-card text-center">
-      <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">
-        {{ t("LBL_TAGS") }}
-      </div>
+    <div v-for="value in tagData" :key="value.date" class="rounded-2xl mb-4">
+      <ArticleExcerpt :doc="value" />
     </div>
   </div>
 </template>
