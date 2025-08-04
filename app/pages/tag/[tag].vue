@@ -1,10 +1,22 @@
 <script setup lang="ts">
 const { locale, t } = useI18n();
-const localePath = useLocalePath();
-const path = computed(() => localePath('/articles'));
 
 const route = useRoute();
 const { tag } = route.params;
+
+const { data: tagData } = await useLazyAsyncData(
+  () => `tag-${locale.value}-${tag}`,
+  async () => {
+    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+
+    return await queryCollection(`${collectionName}`)
+      .where('tags', 'IN', `${tag}`)
+      .order('date', 'DESC')
+      .all();
+  }, {
+  server: true,
+  watch: [locale]
+});
 
 const pageTag = t((`TAG_${(tag)}`).toUpperCase());
 const pageTitle = `${t('LBL_TAG')} - ${pageTag}`;
@@ -24,6 +36,8 @@ useHead({
     <h1 class="text-3xl font-medium text-center">
       {{ pageTitle }}
     </h1>
+
+    <pre>tagData {{ tagData }}</pre>
 
     <div class="excerpt-card text-center">
       <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">

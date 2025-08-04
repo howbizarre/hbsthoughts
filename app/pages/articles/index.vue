@@ -17,8 +17,7 @@ const { data: articlesData } = await useLazyAsyncData(
   }, {
   server: false,
   watch: [locale, currentLimit]
-}
-);
+});
 
 const { data: totalCount } = await useLazyAsyncData(
   () => `articles-total-${locale.value}`,
@@ -28,8 +27,7 @@ const { data: totalCount } = await useLazyAsyncData(
   }, {
   server: true,
   watch: [locale]
-}
-);
+});
 
 const articles = computed(() => articlesData.value || []);
 const total = computed(() => totalCount.value || 0);
