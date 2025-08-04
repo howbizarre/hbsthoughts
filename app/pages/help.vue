@@ -21,7 +21,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="content">
+  <div class="content px-5">
     <ContentRenderer v-if="help" :value="help" />
   </div>
 </template>

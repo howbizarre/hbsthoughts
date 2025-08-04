@@ -5,7 +5,7 @@ const { data: articles } = await useLazyAsyncData(`articles-${locale.value}`, as
   const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
 
   return await queryCollection(`${collectionName}`)
-    .limit(3)
+    .limit(10)
     .skip(0)
     .order('date', 'DESC')
     .all();
