@@ -23,8 +23,7 @@ const { data: articlesData } = await useLazyAsyncData(
 const { data: totalCount } = await useLazyAsyncData(
   () => `articles-total-${locale.value}`,
   async () => {
-    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
-    
+    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';    
     return await queryCollection(`${collectionName}`).count();
   }, { 
     server: true,
@@ -75,8 +74,11 @@ useSeoMeta({
                color="neutral"
                variant="link"
                class="flex justify-between items-center w-full p-5! rounded-2xl bg-gray-500/5 hover:bg-gray-500/25 cursor-pointer relative text-black dark:text-white">
-        <span>{{ t('LBL_LOAD_MORE_ARTICLES') }}: {{ articles.length }} / {{ total }}</span>
-        <UIcon name="i-heroicons-arrow-down" class="size-5" />
+        <span>{{ t('LBL_LOAD_MORE_ARTICLES') }}</span>
+        <span class="flex items-center gap-2">
+          <small>{{ articles.length }} / {{ total }}</small>
+          <UIcon name="i-heroicons-arrow-down" class="size-4" />
+        </span>
       </UButton>
     </template>
   </div>
