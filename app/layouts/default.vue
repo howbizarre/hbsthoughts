@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const localePath = useLocalePath();
-
 const i18nHead = useLocaleHead({
   seo: true,
   lang: true,
@@ -17,7 +15,7 @@ useHead({
 </script>
 
 <template>
-  <UContainer>
+  <UContainer class="pb-3">
     <LayoutLogos />
     <LayoutHeader />
 

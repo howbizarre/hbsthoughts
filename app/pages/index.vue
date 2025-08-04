@@ -1,6 +1,16 @@
 <script lang="ts" setup>
 const { t, locale } = useI18n();
 
+const { data: articles } = await useLazyAsyncData(`articles-${locale.value}`, async () => {
+  const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+
+  return await queryCollection(`${collectionName}`)
+    .limit(3)
+    .skip(0)
+    .order('date', 'DESC')
+    .all();
+}, { server: true });
+
 const { data: seo } = await useLazyAsyncData('content-seo-home', () => {
   return queryCollection('seo').where('stem', '=', 'seo/home').first();
 });
@@ -13,12 +23,17 @@ useSeoMeta({
   description: () => description.value,
   ogTitle: () => title.value,
   ogDescription: () => description.value,
+  ogImage: () => '/images/logo.svg',
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}`,
 });
 </script>
 
 <template>
-  <div>
-    <h1 class="text-4xl font-bold">{{ t('THE_QUESTION') }}</h1>
-    <p>{{ seo?.content.description[locale] }}</p>
+  <div class="grid grid-cols-1 gap-10">
+    <template v-if="articles && Array.isArray(articles) && articles.length > 0">
+      <template v-for="article in articles" :key="article.date">
+        <ArticleExcerpt :doc="article" />
+      </template>
+    </template>
   </div>
 </template>
