@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   app: {
-    pageTransition: { name: 'slide-left', mode: 'out-in' }
+    pageTransition: { name: 'slide-up', mode: 'out-in' }
   },
 
   nitro: {

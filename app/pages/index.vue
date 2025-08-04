@@ -5,7 +5,7 @@ const { data: seo } = await useLazyAsyncData('content-seo-home', () => {
   return queryCollection('seo').where('stem', '=', 'seo/home').first();
 });
 
-const title = computed(() => seo.value?.content.title[locale.value]);
+const title = computed(() => t('THE_QUESTION'));
 const description = computed(() => seo.value?.content.description[locale.value]);
 
 useSeoMeta({

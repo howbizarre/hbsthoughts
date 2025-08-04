@@ -9,26 +9,18 @@
 </template>
 
 <style>
-.slide-left-enter-active,
-.slide-left-leave-active,
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: all 0.2s;
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.2s ease;
 }
-.slide-left-enter-from {
+
+.slide-up-enter-from {
   opacity: 0;
-  transform: translate(50px, 0);
+  transform: translate(0, 50px); /* надолу */
 }
-.slide-left-leave-to {
+
+.slide-up-leave-to {
   opacity: 0;
-  transform: translate(-50px, 0);
-}
-.slide-right-enter-from {
-  opacity: 0;
-  transform: translate(-50px, 0);
-}
-.slide-right-leave-to {
-  opacity: 0;
-  transform: translate(50px, 0);
+  transform: translate(0, -50px); /* нагоре */
 }
 </style>
