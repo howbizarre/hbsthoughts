@@ -14,21 +14,21 @@ const { data: articlesData } = await useLazyAsyncData(
       .skip(0)
       .order('date', 'DESC')
       .all();
-  }, { 
-    server: false,
-    watch: [locale, currentLimit]
-  }
+  }, {
+  server: false,
+  watch: [locale, currentLimit]
+}
 );
 
 const { data: totalCount } = await useLazyAsyncData(
   () => `articles-total-${locale.value}`,
   async () => {
-    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';    
+    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
     return await queryCollection(`${collectionName}`).count();
-  }, { 
-    server: true,
-    watch: [locale]
-  }
+  }, {
+  server: true,
+  watch: [locale]
+}
 );
 
 const articles = computed(() => articlesData.value || []);
@@ -70,16 +70,9 @@ useSeoMeta({
     </template>
 
     <template v-if="showLoadMore">
-      <UButton @click="loadMoreArticles"
-               color="neutral"
-               variant="link"
-               class="flex justify-between items-center w-full p-5! rounded-2xl bg-gray-500/5 hover:bg-gray-500/25 cursor-pointer relative text-black dark:text-white">
-        <span>{{ t('LBL_LOAD_MORE_ARTICLES') }}</span>
-        <span class="flex items-center gap-2">
-          <small>{{ articles.length }} / {{ total }}</small>
-          <UIcon name="i-heroicons-arrow-down" class="size-4" />
-        </span>
-      </UButton>
+      <ButtonLoadMore :current-count="articles.length"
+                      :total-count="total"
+                      @load-more="loadMoreArticles" />
     </template>
   </div>
 </template>

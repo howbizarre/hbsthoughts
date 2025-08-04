@@ -69,13 +69,9 @@ useSeoMeta({
     </template>
 
     <template v-if="showLoadMore">
-      <UButton @click="loadMoreArticles"
-               color="neutral"
-               variant="link"
-               class="flex justify-between items-center w-full p-5! rounded-2xl bg-gray-500/5 hover:bg-gray-500/25 cursor-pointer relative text-black dark:text-white">
-        <span>{{ t('LBL_LOAD_MORE_ARTICLES') }}: {{ articles.length }}</span>
-        <span>{{ total }} <UIcon name="i-heroicons-arrow-down" class="size-5" /></span>
-      </UButton>
+      <ButtonLoadMore :current-count="articles.length"
+                      :total-count="total"
+                      @load-more="loadMoreArticles" />
     </template>
   </div>
 </template>
