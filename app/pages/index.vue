@@ -4,7 +4,7 @@ const { t, locale } = useI18n();
 const pageSize = 3;
 const currentLimit = ref(pageSize);
 
-const { data: articlesData } = await useLazyAsyncData(
+const { data: articlesData, pending } = await useLazyAsyncData(
   () => `articles-${locale.value}-${currentLimit.value}`,
   async () => {
     const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
@@ -61,6 +61,10 @@ useSeoMeta({
 
 <template>
   <div class="grid grid-cols-1 gap-10">
+    <template v-if="pending">
+      <div class="text-center text-gray-500">{{ t('LBL_LOADING') }}</div>
+    </template>
+
     <template v-if="articles && Array.isArray(articles) && articles.length > 0">
       <template v-for="article in articles" :key="article.date">
         <ArticleExcerpt :doc="article" />
@@ -68,8 +72,8 @@ useSeoMeta({
     </template>
 
     <template v-if="showLoadMore">
-      <ButtonLoadMore :current-count="articles.length"
-                      :total-count="total"
+      <ButtonLoadMore :current-count="pending ? 0 : articles.length"
+                      :total-count="pending ? 0 : total"
                       @load-more="loadMoreArticles" />
     </template>
   </div>
