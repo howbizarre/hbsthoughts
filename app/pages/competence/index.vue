@@ -15,6 +15,11 @@ const uniqueCompetence = [...new Set(
 )]
   .sort((a, b) => a.localeCompare(b));
 
+const description = {
+  "bg": `Кои са компетенциите в сайта.`,
+  "en": `What are the competences on the site.`
+};
+
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
     icon: 'i-heroicons-home',
@@ -25,6 +30,14 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     icon: 'i-heroicons-chart-bar-square'
   }
 ]);
+
+useSeoMeta({
+  title: () => t('LBL_COMPETENCE'),
+  description: () => description[(locale.value as 'bg' | 'en')],
+  ogTitle: () => t('LBL_COMPETENCE'),
+  ogDescription: () => description[(locale.value as 'bg' | 'en')],
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence`,
+});
 </script>
 
 <template>

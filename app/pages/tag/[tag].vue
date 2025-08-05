@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import type { BreadcrumbItem } from '@nuxt/ui';
+
 const { locale, t } = useI18n();
+const localePath = useLocalePath();
 
 const route = useRoute();
 const { tag } = route.params;
@@ -27,15 +30,35 @@ const description = {
   "en": `The tag '${pageTag}' is a keyword for easy filtering of articles by topics.`
 };
 
-useHead({
-  title: pageTitle,
-  meta: [{ name: 'description', content: description[(locale.value as 'bg' | 'en')] }]
+const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
+  {
+    icon: 'i-heroicons-home',
+    to: localePath('/')
+  },
+  {
+    label: t('LBL_TAGS'),
+    to: localePath('/tag'),
+    icon: 'i-heroicons-tag'
+  },
+  {
+    label: pageTitle
+  }
+]);
+
+useSeoMeta({
+  title: () => pageTitle,
+  description: () => description[(locale.value as 'bg' | 'en')],
+  ogTitle: () => pageTitle,
+  ogDescription: () => description[(locale.value as 'bg' | 'en')],
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/tag/${tag}`,
 });
 </script>
 
 <template>
   <div v-if="tag" class="grid grid-cols-1 gap-10">
-    <h1 class="text-3xl font-medium text-center">
+    <LayoutBreadcrumb :items="breadcrumbItems" />
+
+    <h1 class="text-3xl font-medium px-5 m-0">
       {{ pageTitle }}
     </h1>
 
