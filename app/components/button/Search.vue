@@ -37,10 +37,10 @@ const result = computed(() => fuse.search(toValue(query)).slice(0, 10));
           <UInput v-model="query" :placeholder="`${t('LBL_SEARCH')}...`" class="w-full" />
 
           <div v-for="link of result" :key="link.item.id" class="mt-4">
-            <NuxtLink :to="link.item.id" class="w-full">
+            <a :href="link.item.id" :title="link.item.title" class="w-full" target="_self">
               <strong class="block w-full">{{ link.item.title }}</strong>
               <small class="block w-full">{{ link.item.content?.slice(0, 100) }}...</small>
-            </NuxtLink>
+            </a>
           </div>
         </UCard>
       </template>
