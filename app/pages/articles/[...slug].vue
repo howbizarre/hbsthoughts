@@ -15,7 +15,7 @@ const { data: surroundingArticles } = await useLazyAsyncData(
   () => `surround-article-${route.path}-${locale.value}`, // реактивен ключ
   async () => {
     const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
-    return await queryCollectionItemSurroundings(collectionName, `/articles/${locale.value}/${slug.value}`).order('date', 'DESC')
+    return await queryCollectionItemSurroundings(collectionName, `/${locale.value}/articles/${slug.value}`).order('date', 'DESC')
   }, { server: true }
 );
 
