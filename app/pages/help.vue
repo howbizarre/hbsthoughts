@@ -4,11 +4,9 @@ import type { BreadcrumbItem } from '@nuxt/ui';
 const { locale } = useI18n();
 const localePath = useLocalePath();
 
-const { data: seo } = await useLazyAsyncData('content-seo-home', () => {
+const { data: seo } = await useLazyAsyncData('content-seo-help', () => {
   return queryCollection('seo').where('stem', '=', 'seo/help').first();
 });
-
-console.log('seo', seo.value);
 
 const { data: help } = await useLazyAsyncData('content-static-help', () => {
   return queryCollection('static').path(`/static/${locale.value}/help`).first();
@@ -17,7 +15,7 @@ const { data: help } = await useLazyAsyncData('content-static-help', () => {
 const title = computed(() => seo.value?.content.title[locale.value]);
 const description = computed(() => seo.value?.content.description[locale.value]);
 
-const breadcrumbItems: BreadcrumbItem[] = [
+const breadcrumbItems = ref<BreadcrumbItem[]>([
   {
     icon: 'i-heroicons-home',
     to: localePath('/')
@@ -25,7 +23,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
   {
     label: title.value
   }
-];
+]);
 
 useSeoMeta({
   title: () => title.value,
