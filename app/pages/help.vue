@@ -15,7 +15,7 @@ const { data: help } = await useLazyAsyncData('content-static-help', () => {
 const title = computed(() => seo.value?.content.title[locale.value]);
 const description = computed(() => seo.value?.content.description[locale.value]);
 
-const breadcrumbItems = ref<BreadcrumbItem[]>([
+const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
     icon: 'i-heroicons-home',
     to: localePath('/')
