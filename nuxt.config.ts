@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     payloadExtraction: false // optimize for SSR
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxt/content', , 'nuxt-llms'],
+  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxt/content', 'nuxt-llms'],
 
   css: ['~/assets/css/main.css'],
 
