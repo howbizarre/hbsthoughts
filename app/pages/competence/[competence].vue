@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import type { BreadcrumbItem } from '@nuxt/ui';
+
 const { locale, t } = useI18n();
+const localePath = useLocalePath();
 const route = useRoute();
 const { competence } = route.params;
 
@@ -25,15 +28,35 @@ const description = {
   "en": `Competence '${pageCompetence}' is an indicator of how technically oriented an article is. From simple, without technical details, to very professional.`
 };
 
-useHead({
-  title: pageTitle,
-  meta: [{ name: 'description', content: description[(locale.value as 'bg' | 'en')] }]
+const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
+  {
+    icon: 'i-heroicons-home',
+    to: localePath('/')
+  },
+  {
+    label: t('LBL_COMPETENCE'),
+    to: localePath('/competence'),
+    icon: 'i-heroicons-chart-bar-square'
+  },
+  {
+    label: pageTitle
+  }
+]);
+
+useSeoMeta({
+  title: () => pageTitle,
+  description: () => description[(locale.value as 'bg' | 'en')],
+  ogTitle: () => pageTitle,
+  ogDescription: () => description[(locale.value as 'bg' | 'en')],
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence/${competence}`,
 });
 </script>
 
 <template>
   <div v-if="competence" class="grid grid-cols-1 gap-10">
-    <h1 class="text-3xl font-medium text-center">
+    <LayoutBreadcrumb :items="breadcrumbItems" />
+
+    <h1 class="text-3xl font-medium px-5 m-0">
       {{ pageTitle }}
     </h1>
 

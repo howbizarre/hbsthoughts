@@ -34,6 +34,14 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   }
 ]);
 
+useSeoMeta({
+  title: () => article.value?.title,
+  description: () => article.value?.description,
+  ogTitle: () => article.value?.title,
+  ogDescription: () => article.value?.description,
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/articles/${slug.value}`,
+});
+
 function formatPath(path: string): string {
   const pathArray = path.split('/');
   return `/${pathArray[2]}/${pathArray[1]}/${pathArray[3]}`;
