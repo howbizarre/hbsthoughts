@@ -15,10 +15,13 @@
   "LBL_LOAD_HOME_PAGE": "Load home page",
   "LBL_LOAD_MORE": "Load more",
   "LBL_LOAD_MORE_ARTICLES": "Load more articles",
+  "LBL_LOCALE_BG": "Български",
+  "LBL_LOCALE_EN": "Англииски",
   "LBL_MORE": "More",
   "LBL_READ_MORE": "Read more",
   "LBL_SEARCH": "Search",
   "LBL_SIMPLE_SEARCH": "Опростено търсене",
+  "LBL_SWITCH_TO": "Сменете на",
   "LBL_TAG": "Tag",
   "LBL_TAGS": "Tags",
   "LBL_TYPE_SOMETHING": "Type something",
@@ -38,7 +41,9 @@
   "TAG_VUE-ROUTER": "Vue Router",
   "TAG_WEB-WORKERS": "Web Workers",
   "THE_QUESTION": "If the Universe Is the Answer, What Is the Question?!",
+  "TXT_DARK_SIDE_SWITCH": "Go to the dark side",
   "TXT_ERROR_WEB_ADDRESS": "Error in page address",
+  "TXT_LIGHT_SIDE_SWITCH": "Come to the bright side",
   "TXT_LINK_ARTICLE": "Link to the article",
   "TXT_NO_ARTICLES_FOUND": "No articles found"
 }

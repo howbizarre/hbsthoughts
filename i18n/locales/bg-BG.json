@@ -15,10 +15,13 @@
   "LBL_LOAD_HOME_PAGE": "Зареди началната страница",
   "LBL_LOAD_MORE": "Зареди още",
   "LBL_LOAD_MORE_ARTICLES": "Зареди още статии",
+  "LBL_LOCALE_BG": "Bulgarian",
+  "LBL_LOCALE_EN": "English",
   "LBL_MORE": "Още",
   "LBL_READ_MORE": "Прочетете повече",
   "LBL_SEARCH": "Търсене",
   "LBL_SIMPLE_SEARCH": "Simple search",
+  "LBL_SWITCH_TO": "Switch to",
   "LBL_TAG": "Таг",
   "LBL_TAGS": "Тагове",
   "LBL_TYPE_SOMETHING": "Напишете нещо",
@@ -38,7 +41,9 @@
   "TAG_VUE-ROUTER": "Vue Router",
   "TAG_WEB-WORKERS": "Web Workers",
   "THE_QUESTION": "Ако Вселената е отговорът, какъв е въпросът?!",
+  "TXT_DARK_SIDE_SWITCH": "Преминете на тъмна страна",
   "TXT_ERROR_WEB_ADDRESS": "Грешка в адреса на страницата",
+  "TXT_LIGHT_SIDE_SWITCH": "Преминете на светлата страна",
   "TXT_LINK_ARTICLE": "Линк към статията",
   "TXT_NO_ARTICLES_FOUND": "Няма намерени статии"
 }
