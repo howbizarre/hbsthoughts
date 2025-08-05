@@ -4,7 +4,7 @@ import type { BreadcrumbItem } from '@nuxt/ui';
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
 
-const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
 const allArticlesRaw = await queryCollection(`${collectionName}`).select('competence').all();
 
 const uniqueCompetence = [...new Set(

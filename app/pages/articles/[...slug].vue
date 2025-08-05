@@ -6,15 +6,15 @@ const localePath = useLocalePath();
 const route = useRoute();
 const slug = ref(route.params.slug);
 
-const { data: article } = await useLazyAsyncData(route.path, async () => {
-  const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
-  return await queryCollection(`${collectionName}`).path(`/articles/${locale.value}/${slug.value}`).first()
+const { data: article } = await useLazyAsyncData(`${route.path}-${slug.value}`, async () => {
+  const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
+  return await queryCollection(`${collectionName}`).path(`/${locale.value}/articles/${slug.value}`).first()
 }, { server: true });
 
 const { data: surroundingArticles } = await useLazyAsyncData(
   () => `surround-article-${route.path}-${locale.value}`, // реактивен ключ
   async () => {
-    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+    const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
     return await queryCollectionItemSurroundings(collectionName, `/articles/${locale.value}/${slug.value}`).order('date', 'DESC')
   }, { server: true }
 );

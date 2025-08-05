@@ -10,7 +10,7 @@ const currentLimit = ref(pageSize);
 const { data: articlesData, pending } = await useLazyAsyncData(
   () => `articles-${locale.value}-${currentLimit.value}`,
   async () => {
-    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+    const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
 
     return await queryCollection(`${collectionName}`)
       .limit(currentLimit.value)
@@ -25,7 +25,7 @@ const { data: articlesData, pending } = await useLazyAsyncData(
 const { data: totalCount } = await useLazyAsyncData(
   () => `articles-total-${locale.value}`,
   async () => {
-    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+    const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
     return await queryCollection(`${collectionName}`).count();
   }, {
   server: true,

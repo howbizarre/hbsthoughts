@@ -26,10 +26,12 @@ export default defineContentConfig({
         })
       })
     }),
+    
     static: defineCollection({
       type: 'page',
       source: 'static/**/*.md'
     }),
+
     articles_bg: defineCollection({
       type: 'page',
       source: 'articles/bg/**',
@@ -38,6 +40,17 @@ export default defineContentConfig({
     articles_en: defineCollection({
       type: 'page',
       source: 'articles/en/**',
+      schema: articleSchema
+    }),
+
+    bg_articles: defineCollection({
+      type: 'page',
+      source: 'bg/articles/**',
+      schema: articleSchema
+    }),
+    en_articles: defineCollection({
+      type: 'page',
+      source: 'en/articles/**',
       schema: articleSchema
     })
   }

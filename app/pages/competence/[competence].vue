@@ -9,7 +9,7 @@ const { competence } = route.params;
 const { data: competenceData } = await useLazyAsyncData(
   () => `competence-${locale.value}-${competence}`,
   async () => {
-    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+    const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
 
     return await queryCollection(`${collectionName}`)
       .where('competence', 'LIKE', `%${competence}%`)

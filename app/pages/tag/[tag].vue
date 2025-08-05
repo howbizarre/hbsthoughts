@@ -10,7 +10,7 @@ const { tag } = route.params;
 const { data: tagData } = await useLazyAsyncData(
   () => `tag-${locale.value}-${tag}`,
   async () => {
-    const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+    const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
 
     const allResults = await queryCollection(`${collectionName}`)
       .where('tags', 'LIKE', `%${tag}%`)

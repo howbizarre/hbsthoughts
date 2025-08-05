@@ -4,7 +4,7 @@ import Fuse from 'fuse.js';
 const { locale } = useI18n();
 
 const query = ref('');
-const collectionName = `articles_${locale.value}` as 'articles_bg' | 'articles_en';
+const collectionName = `${locale.value}_articles` as 'bg_articles' | 'en_articles';
 
 const { data: body } = await useAsyncData(`search-sections-${collectionName}`, () => {
   return $fetch('/api/sections', {
