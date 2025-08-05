@@ -43,6 +43,7 @@ useSeoMeta({
 });
 
 function formatPath(path: string): string {
+  console.log('path', path);
   const pathArray = path.split('/');
   return `/${pathArray[2]}/${pathArray[1]}/${pathArray[3]}`;
 }
@@ -64,7 +65,7 @@ function formatPath(path: string): string {
 
       <div class="grid gap-8 sm:grid-cols-2">
         <template v-if="surroundingArticles?.[1]">
-          <NuxtLink :to="formatPath(surroundingArticles[1].path)"
+          <NuxtLink :to="surroundingArticles[1].path"
                     class="block px-6 py-8 border rounded-lg border-gray-50! dark:border-gray-950! hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300">
             <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
               <UIcon name="i-heroicons-arrow-left" class="size-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
@@ -79,7 +80,7 @@ function formatPath(path: string): string {
         <div v-else class="hidden sm:block px-6 py-8">&nbsp;</div>
 
         <template v-if="surroundingArticles?.[0]">
-          <NuxtLink :to="formatPath(surroundingArticles[0].path)" class="block px-6 py-8 border rounded-lg border-gray-50! dark:border-gray-950! hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300 text-right">
+          <NuxtLink :to="surroundingArticles[0].path" class="block px-6 py-8 border rounded-lg border-gray-50! dark:border-gray-950! hover:bg-gray-50/50 dark:hover:bg-gray-950/50 group transition-colors duration-300 text-right">
             <div class="inline-flex items-center rounded-full p-1.5 bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 mb-4">
               <UIcon name="i-heroicons-arrow-right" class="size-5 text-gray-900 dark:text-white group-hover:text-green-500 transition-colors duration-300" />
             </div>
