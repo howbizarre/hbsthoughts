@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const { t, locale } = useI18n();
+import type { BreadcrumbItem } from '@nuxt/ui';
+
+const { locale } = useI18n();
+const localePath = useLocalePath();
 
 const pageSize = 10;
 const currentLimit = ref(pageSize);
@@ -48,6 +51,16 @@ const { data: seo } = await useLazyAsyncData('content-seo-articles', () => {
 
 const title = computed(() => seo.value?.content.title[locale.value]);
 const description = computed(() => seo.value?.content.description[locale.value]);
+const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
+  {
+    icon: 'i-heroicons-home',
+    to: localePath('/')
+  },
+  {
+    label: title.value,
+    icon: 'i-heroicons-square-3-stack-3d'
+  }
+]);
 
 useSeoMeta({
   title: () => title.value,
@@ -60,6 +73,8 @@ useSeoMeta({
 
 <template>
   <div class="grid grid-cols-1 gap-10">
+    <LayoutBreadcrumb :items="breadcrumbItems" />
+
     <template v-if="articles && Array.isArray(articles) && articles.length > 0">
       <template v-for="article in articles" :key="article.date">
         <ArticleExcerpt :doc="article" />

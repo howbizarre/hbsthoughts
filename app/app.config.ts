@@ -4,7 +4,7 @@ export default defineAppConfig({
       variants: {
         active: {
           true: {
-            link: 'text-gray-900 dark:text-gray-100 font-semibold'
+            link: 'text-gray-700 dark:text-gray-300 font-normal'
           }
         }
       }

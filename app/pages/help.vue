@@ -34,8 +34,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="content px-5">
+  <div class="content">
     <LayoutBreadcrumb :items="breadcrumbItems" />
-    <ContentRenderer v-if="help" :value="help" />
+    <ContentRenderer v-if="help" :value="help" class="px-5" />
   </div>
 </template>

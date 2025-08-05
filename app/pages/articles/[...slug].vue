@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const { locale } = useI18n();
+import type { BreadcrumbItem } from '@nuxt/ui';
+
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
 const route = useRoute();
 const slug = ref(route.params.slug);
 
@@ -16,6 +19,21 @@ const { data: surroundingArticles } = await useLazyAsyncData(
   }, { server: true }
 );
 
+const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
+  {
+    icon: 'i-heroicons-home',
+    to: localePath('/')
+  },
+  {
+    label: t('LBL_ARTICLES'),
+    to: localePath('/articles'),
+    icon: 'i-heroicons-square-3-stack-3d'
+  },
+  {
+    label: article.value?.title
+  }
+]);
+
 function formatPath(path: string): string {
   const pathArray = path.split('/');
   return `/${pathArray[2]}/${pathArray[1]}/${pathArray[3]}`;
@@ -24,7 +42,9 @@ function formatPath(path: string): string {
 
 <template>
   <article class="rounded-2xl mb-4">
-    <header class="text-left mb-10 px-5">
+    <LayoutBreadcrumb :items="breadcrumbItems" />
+
+    <header class="text-left my-10 px-5">
       <p v-if="article?.date" class="text-gray-500 text-sm -mb-7 block">{{ (new Date(article.date)).toLocaleDateString(locale) }}</p>
       <h1 class="text-4xl font-medium">{{ article?.title }}</h1>
     </header>
