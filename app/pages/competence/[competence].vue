@@ -34,7 +34,7 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     to: localePath('/')
   },
   {
-    label: t('LBL_COMPETENCE'),
+    label: t('LBL_COMPETENCIES'),
     to: localePath('/competence'),
     icon: 'i-heroicons-chart-bar-square'
   },

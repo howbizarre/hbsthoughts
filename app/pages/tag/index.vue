@@ -38,9 +38,24 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
+  <div class="grid grid-cols-1 gap-10">
     <LayoutBreadcrumb :items="breadcrumbItems" />
 
-    <pre>{{ uniqueTags }}</pre>
+    <h1 class="text-3xl font-medium px-5 m-0">
+      {{ t('LBL_TAGS') }}
+    </h1>
+
+    <div class="excerpt-card text-center">
+      <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">
+        {{ t("LBL_TAGS") }}
+      </div>
+
+      <template v-for="(doc, index) in uniqueTags" :key="`${doc}-${index}`">
+        <NuxtLink :to="localePath(`/tag/${doc}`)"
+                  class="bg-white/50 text-black/75 hover:bg-white hover:text-black dark:bg-black/50 dark:text-white/75 dark:hover:bg-black dark:hover:text-white transition-colors ease-in-out duration-300 py-1 px-2 m-1 sm:mx-1 rounded-xl text-md inline-block">
+          {{ t((`TAG_${doc}`).toUpperCase()) }}
+        </NuxtLink>
+      </template>
+    </div>
   </div>
 </template>
