@@ -18,7 +18,7 @@ const { data: articlesData, pending } = await useLazyAsyncData(
       .order('date', 'DESC')
       .all();
   }, {
-  server: false,
+  server: true,
   watch: [locale, currentLimit]
 });
 
@@ -86,8 +86,8 @@ useSeoMeta({
     </template>
 
     <template v-if="showLoadMore">
-      <ButtonLoadMore :current-count="pending ? 0 : articles.length"
-                      :total-count="pending ? 0 : total"
+      <ButtonLoadMore :current-count="articles.length"
+                      :total-count="total"
                       @load-more="loadMoreArticles" />
     </template>
   </div>

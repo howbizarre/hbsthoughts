@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     payloadExtraction: false // optimize for SSR
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxt/content'],
+  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxt/content', , 'nuxt-llms'],
 
   css: ['~/assets/css/main.css'],
 
@@ -88,6 +88,12 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  llms: {
+    domain: "https://thoughts.bizarre.how",
+    title: "HB's Thoughts",
+    description: "Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end."
   },
 
   compatibilityDate: '2025-07-15',
