@@ -38,7 +38,6 @@ const normalizeUrl = (url: string) => url.split('#')[0];
           <UCard>
             <UInput v-model="query" :placeholder="`${t('LBL_SEARCH')}...`" class="w-full" />
 
-
             <div v-for="link of result" :key="link.item.id" class="mt-4">
               <a :href="normalizeUrl(link.item.id)" :title="link.item.title" class="w-full" target="_self">
                 <strong class="block w-full">{{ link.item.title }}</strong>
