@@ -2,4 +2,8 @@ User-Agent: *
 Disallow:
 
 Sitemap: https://thoughts.bizarre.how/sitemap.xml
+Sitemap: https://thoughts.bizarre.how/sitemap_index.xml
+Sitemap: https://thoughts.bizarre.how/__sitemap__/en.xml
+Sitemap: https://thoughts.bizarre.how/__sitemap__/bg.xml
+
 LLMS: https://thoughts.bizarre.how/llms.txt

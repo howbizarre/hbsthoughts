@@ -36,6 +36,7 @@ useSeoMeta({
   description: () => description.value,
   ogTitle: () => title.value,
   ogDescription: () => description.value,
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/help`
 });
 </script>
 
