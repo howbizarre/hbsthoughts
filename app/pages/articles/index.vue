@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { BreadcrumbItem } from '@nuxt/ui';
-
+                                                                  
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
 
@@ -74,6 +74,10 @@ useSeoMeta({
 <template>
   <div class="grid grid-cols-1 gap-10">
     <LayoutBreadcrumb :items="breadcrumbItems" />
+
+    <h1 class="text-3xl font-medium px-5 m-0">
+      {{ title }}
+    </h1>
 
     <template v-if="pending">
       <div class="text-center text-gray-500">{{ t('LBL_LOADING') }}</div>

@@ -7,9 +7,14 @@ export default defineNuxtConfig({
     payloadExtraction: false // optimize for SSR
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxt/content', 'nuxt-llms'],
+  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxt/content', 'nuxt-llms'],
 
   css: ['~/assets/css/main.css'],
+
+  site: {
+    url: 'https://thoughts.bizarre.how',
+    name: "How Bizarre's Thoughts"
+  },
 
   app: {
     baseURL: '/',
@@ -61,7 +66,7 @@ export default defineNuxtConfig({
         file: 'locales/bg-BG.json'
       }
     ],
-    baseUrl: 'https://photostudionana.com',
+    baseUrl: 'https://thoughts.bizarre.how',
     langDir: './',
     defaultLocale: 'bg',
     vueI18n: './i18n.config.ts',
@@ -91,9 +96,9 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: "https://thoughts.bizarre.how",
+    domain: 'https://thoughts.bizarre.how',
     title: "HB's Thoughts",
-    description: "Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end."
+    description: 'Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end.'
   },
 
   compatibilityDate: '2025-07-15',
