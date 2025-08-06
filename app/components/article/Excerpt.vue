@@ -15,7 +15,7 @@ const path = computed(() => `/${locale.value}/articles/${doc.value.slug}`);
     </div>
 
     <h2 class="text-3xl font-normal mt-1">
-      <NuxtLink :to="path">
+      <NuxtLink :to="path" :title="`${t('LBL_GO_TO')} ${doc.title}`">
         {{ doc.title }}
         <span class="sr-only">{{ t('TXT_LINK_ARTICLE') }}</span>
       </NuxtLink>

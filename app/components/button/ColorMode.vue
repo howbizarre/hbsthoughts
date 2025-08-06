@@ -18,10 +18,11 @@ const isDark = computed({
       <UTooltip :delay-duration="0" :text="`${t(isDark ? 'TXT_LIGHT_SIDE_SWITCH' : 'TXT_DARK_SIDE_SWITCH')}`">
         <UButton :icon=" isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'"
                  @click=" isDark=!isDark"
-                color="neutral"
-                variant="ghost"
-                size="md"
-                class="cursor-pointer" />
+                 :aria-label="`${t(isDark ? 'TXT_LIGHT_SIDE_SWITCH' : 'TXT_DARK_SIDE_SWITCH')}`"
+                 color="neutral"
+                 variant="ghost"
+                 size="md"
+                 class="cursor-pointer" />
       </UTooltip>
       <template #fallback>
         <div class="size-8" />
