@@ -48,7 +48,7 @@ useSeoMeta({
   description: () => description[(locale.value as 'bg' | 'en')],
   ogTitle: () => pageTitle,
   ogDescription: () => description[(locale.value as 'bg' | 'en')],
-  ogUrl: () => `https://v4.bizarre.how/${locale.value}/competence/${competence}`,
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence/${competence}`,
 });
 </script>
 

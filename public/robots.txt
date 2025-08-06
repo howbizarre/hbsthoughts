@@ -1,5 +1,5 @@
 User-Agent: *
 Disallow:
 
-Sitemap: https://v4.bizarre.how/sitemap.xml
-LLMS: https://v4.bizarre.how/llms.txt
+Sitemap: https://thoughts.bizarre.how/sitemap.xml
+LLMS: https://thoughts.bizarre.how/llms.txt

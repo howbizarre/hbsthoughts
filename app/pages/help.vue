@@ -13,8 +13,10 @@ const { data: help } = await useLazyAsyncData(
   async () => {
     const collectionName = `${locale.value}_static` as 'bg_static' | 'en_static';
     return await queryCollection(collectionName).path(`/${locale.value}/static/help`).first();
-  }
-);
+  }, {
+  server: true,
+  watch: [locale]
+});
 
 const title = computed(() => seo.value?.content.title[locale.value]);
 const description = computed(() => seo.value?.content.description[locale.value]);

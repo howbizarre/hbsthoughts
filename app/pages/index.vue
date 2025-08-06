@@ -55,7 +55,7 @@ useSeoMeta({
   ogTitle: () => title.value,
   ogDescription: () => description.value,
   ogImage: () => '/images/logo.svg',
-  ogUrl: () => `https://v4.bizarre.how/${locale.value}`,
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}`,
 });
 </script>
 

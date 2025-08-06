@@ -67,7 +67,7 @@ useSeoMeta({
   description: () => description.value,
   ogTitle: () => title.value,
   ogDescription: () => description.value,
-  ogUrl: () => `https://v4.bizarre.how/${locale.value}/articles`,
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/articles`,
 });
 </script>
 

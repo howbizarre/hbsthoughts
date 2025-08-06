@@ -36,7 +36,7 @@ useSeoMeta({
   description: () => description[(locale.value as 'bg' | 'en')],
   ogTitle: () => t('LBL_COMPETENCIES'),
   ogDescription: () => description[(locale.value as 'bg' | 'en')],
-  ogUrl: () => `https://v4.bizarre.how/${locale.value}/competence`,
+  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence`,
 });
 </script>
 
