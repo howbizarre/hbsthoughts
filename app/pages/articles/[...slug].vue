@@ -42,6 +42,16 @@ useSeoMeta({
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/articles/${slug.value}`,
 });
 
+// Add JSON-LD structured data for blog post
+if (article.value) {
+  useJsonLdBlogPost({
+    title: article.value.title,
+    description: article.value.description,
+    date: article.value.date,
+    path: article.value.path
+  }, locale.value);
+}
+
 function formatPath(path: string): string {
   console.log('path', path);
   const pathArray = path.split('/');

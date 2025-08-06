@@ -69,6 +69,19 @@ useSeoMeta({
   ogDescription: () => description.value,
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/articles`,
 });
+
+// Add JSON-LD structured data for blog listing
+useJsonLdBlogListing({
+  title: title.value || '',
+  description: description.value || '',
+  articles: articles.value.map(article => ({
+    title: article.title,
+    description: article.description,
+    date: article.date,
+    path: article.path
+  })),
+  locale: locale.value
+});
 </script>
 
 <template>
