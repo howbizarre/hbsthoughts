@@ -8,9 +8,13 @@ const { data: seo } = await useLazyAsyncData('content-seo-help', () => {
   return queryCollection('seo').where('stem', '=', 'seo/help').first();
 });
 
-const { data: help } = await useLazyAsyncData('content-static-help', () => {
-  return queryCollection('static').path(`/static/${locale.value}/help`).first();
-});
+const { data: help } = await useLazyAsyncData(
+  () => `${locale.value}-static-help`,
+  async () => {
+    const collectionName = `${locale.value}_static` as 'bg_static' | 'en_static';
+    return await queryCollection(collectionName).path(`/${locale.value}/static/help`).first();
+  }
+);
 
 const title = computed(() => seo.value?.content.title[locale.value]);
 const description = computed(() => seo.value?.content.description[locale.value]);

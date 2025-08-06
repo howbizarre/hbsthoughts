@@ -26,31 +26,24 @@ export default defineContentConfig({
         })
       })
     }),
-    
-    static: defineCollection({
-      type: 'page',
-      source: 'static/**/*.md'
-    }),
 
-    articles_bg: defineCollection({
+    bg_static: defineCollection({
       type: 'page',
-      source: 'articles/bg/**',
-      schema: articleSchema
+      source: 'bg/static/*.md'
     }),
-    articles_en: defineCollection({
+    en_static: defineCollection({
       type: 'page',
-      source: 'articles/en/**',
-      schema: articleSchema
+      source: 'en/static/*.md'
     }),
 
     bg_articles: defineCollection({
       type: 'page',
-      source: 'bg/articles/**',
+      source: 'bg/articles/*.md',
       schema: articleSchema
     }),
     en_articles: defineCollection({
       type: 'page',
-      source: 'en/articles/**',
+      source: 'en/articles/*.md',
       schema: articleSchema
     })
   }
