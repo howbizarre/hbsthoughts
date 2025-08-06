@@ -1,8 +1,28 @@
 {
 	"name": "hbsthoughts",
 	"version": "1.0.3",
+  "description": "Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end.",
+  "keywords": [
+    "nuxt4",
+    "vue3",
+    "typescript",
+    "tailwindcss",
+    "cloudflare-workers",
+    "browser",
+    "wrangler"
+  ],
 	"private": true,
 	"type": "module",
+  "homepage": "https://thoughts.bizarre.how",
+  "author": {
+    "name": "howbizarre",
+    "url": "https://github.com/howbizarre"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hristobotev/hbsthoughts.git"
+  },
 	"scripts": {
 		"build": "nuxt build",
 		"dev": "nuxt dev --port 7410",
