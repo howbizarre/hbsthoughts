@@ -2,6 +2,10 @@
 @plugin "@tailwindcss/typography";
 @import "@nuxt/ui";
 
+@theme {
+  --breakpoint-xs: 30rem;
+}
+
 body, html { @apply flex flex-col; }
 html { @apply size-full; }
 body { @apply min-h-full min-w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 relative font-sans; }

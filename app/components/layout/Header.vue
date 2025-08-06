@@ -25,7 +25,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', stickIt));
       <ButtonSearch />
     </div>
 
-    <div class="flex justify-end gap-2">
+    <div class="flex justify-end gap-0">
       <ButtonLangSwitcher />
       <ButtonColorMode />
     </div>
