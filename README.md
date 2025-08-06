@@ -83,7 +83,6 @@ The site will be available at `http://localhost:7410`
 │   ├── bg/                # Bulgarian articles
 │   ├── en/                # English articles
 │   ├── seo/               # SEO configurations
-│   └── static/            # Static content pages
 ├── i18n/                  # Internationalization
 ├── public/                # Public assets
 └── server/                # Server-side code
@@ -95,7 +94,8 @@ Articles are written in Markdown and stored in the `content/` directory:
 
 - `/content/en/articles/` - English articles
 - `/content/bg/articles/` - Bulgarian articles
-- `/content/static/` - Static pages (like help pages)
+- `/content/en/static/` - English static pages (like help pages)
+- `/content/bg/static/` - Bulgarian static pages (like help pages)
 
 ### Article Format
 
