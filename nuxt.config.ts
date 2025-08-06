@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   site: {
-    url: 'https://thoughts.bizarre.how',
+    url: 'https://v4.bizarre.how',
     name: "How Bizarre's Thoughts"
   },
 
@@ -66,7 +66,7 @@ export default defineNuxtConfig({
         file: 'locales/bg-BG.json'
       }
     ],
-    baseUrl: 'https://photostudionana.com',
+    baseUrl: 'https://v4.bizarre.how',
     langDir: './',
     defaultLocale: 'bg',
     vueI18n: './i18n.config.ts',
@@ -96,7 +96,7 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://thoughts.bizarre.how',
+    domain: 'https://v4.bizarre.how',
     title: "HB's Thoughts",
     description: 'Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end.'
   },

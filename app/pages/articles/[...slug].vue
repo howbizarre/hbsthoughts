@@ -39,7 +39,7 @@ useSeoMeta({
   description: () => article.value?.description,
   ogTitle: () => article.value?.title,
   ogDescription: () => article.value?.description,
-  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/articles/${slug.value}`,
+  ogUrl: () => `https://v4.bizarre.how/${locale.value}/articles/${slug.value}`,
 });
 
 function formatPath(path: string): string {

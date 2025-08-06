@@ -33,7 +33,7 @@ useSeoMeta({
   description: () => description[(locale.value as 'bg' | 'en')],
   ogTitle: () => t('LBL_TAGS'),
   ogDescription: () => description[(locale.value as 'bg' | 'en')],
-  ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/tag`,
+  ogUrl: () => `https://v4.bizarre.how/${locale.value}/tag`,
 });
 </script>
 

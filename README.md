@@ -4,7 +4,7 @@ A modern blog built with Nuxt 4, focused on articles about Vue, Nuxt, TailwindCS
 
 ## 🌐 Live Site
 
-Visit the blog at: [thoughts.bizarre.how](https://thoughts.bizarre.how)
+Visit the blog at: [v4.bizarre.how](https://v4.bizarre.how)
 
 ## 📖 About
 
@@ -145,7 +145,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 **howbizarre**
 - GitHub: [@howbizarre](https://github.com/howbizarre)
-- Website: [thoughts.bizarre.how](https://thoughts.bizarre.how)
+- Website: [v4.bizarre.how](https://v4.bizarre.how)
 
 ## 🙏 Acknowledgments
 
