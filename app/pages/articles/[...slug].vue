@@ -43,14 +43,16 @@ useSeoMeta({
 });
 
 // Add JSON-LD structured data for blog post
-if (article.value) {
-  useJsonLdBlogPost({
+const mappedArticle = computed(() => 
+  article.value ? {
     title: article.value.title,
     description: article.value.description,
     date: article.value.date,
     path: article.value.path
-  }, locale.value);
-}
+  } : null
+);
+
+useJsonLdBlogPost(mappedArticle, locale);
 
 function formatPath(path: string): string {
   console.log('path', path);

@@ -71,17 +71,16 @@ useSeoMeta({
 });
 
 // Add JSON-LD structured data for blog listing
-useJsonLdBlogListing({
-  title: title.value || '',
-  description: description.value || '',
-  articles: articles.value.map(article => ({
+const mappedArticles = computed(() => 
+  articles.value.map(article => ({
     title: article.title,
     description: article.description,
     date: article.date,
     path: article.path
-  })),
-  locale: locale.value
-});
+  }))
+);
+
+useJsonLdBlogListing(title, description, mappedArticles, locale);
 </script>
 
 <template>
