@@ -20,16 +20,20 @@ const { data: competenceData } = await useLazyAsyncData(
   watch: [locale]
 });
 
+const articles = computed(() => competenceData.value || []);
 const pageCompetence = t((`COMPETENCE_${(competence)}`).toUpperCase());
-const pageTitle = `${pageCompetence} ${t('LBL_COMPETENCE')}`;
 
 const description = {
   "bg": `Компетентността '${pageCompetence}' е показател, колко технически насочена е статията. От простичка, без технически детайли, до много професионална.`,
   "en": `Competence '${pageCompetence}' is an indicator of how technically oriented an article is. From simple, without technical details, to very professional.`
 };
 
+const pageTitle = computed(() => `${pageCompetence} ${t('LBL_COMPETENCE')}`);
+const pageDescription = computed(() => description[(locale.value as 'bg' | 'en')]);
+
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
+    label: t('LBL_HOME'),
     icon: 'i-heroicons-home',
     to: localePath('/')
   },
@@ -39,17 +43,31 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     icon: 'i-heroicons-chart-bar-square'
   },
   {
-    label: pageTitle
+    label: pageTitle.value,
+    to: localePath(`/competence/${competence}`),
   }
 ]);
 
 useSeoMeta({
-  title: () => pageTitle,
-  description: () => description[(locale.value as 'bg' | 'en')],
-  ogTitle: () => pageTitle,
-  ogDescription: () => description[(locale.value as 'bg' | 'en')],
+  title: () => pageTitle.value,
+  description: () => pageDescription.value,
+  ogTitle: () => pageTitle.value,
+  ogDescription: () => pageDescription.value,
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence/${competence}`,
 });
+
+// Add JSON-LD structured data for blog listing
+const mappedArticles = computed(() =>
+  articles.value.map(article => ({
+    title: article.title,
+    description: article.description,
+    date: article.date,
+    path: article.path
+  }))
+);
+
+useJsonLdBlogListing(pageTitle, pageDescription, mappedArticles, locale);
+useJsonLdBreadcrumbs(breadcrumbItems);
 </script>
 
 <template>

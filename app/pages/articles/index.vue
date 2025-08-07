@@ -53,11 +53,13 @@ const title = computed(() => seo.value?.content.title[locale.value]);
 const description = computed(() => seo.value?.content.description[locale.value]);
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
+    label: t('LBL_HOME'),
     icon: 'i-heroicons-home',
     to: localePath('/')
   },
   {
     label: title.value,
+    to: localePath('/articles'),
     icon: 'i-heroicons-square-3-stack-3d'
   }
 ]);
@@ -69,6 +71,19 @@ useSeoMeta({
   ogDescription: () => description.value,
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/articles`,
 });
+
+// Add JSON-LD structured data for blog listing
+const mappedArticles = computed(() => 
+  articles.value.map(article => ({
+    title: article.title,
+    description: article.description,
+    date: article.date,
+    path: article.path
+  }))
+);
+
+useJsonLdBlogListing(title, description, mappedArticles, locale);
+useJsonLdBreadcrumbs(breadcrumbItems);
 </script>
 
 <template>
