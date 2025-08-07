@@ -21,6 +21,7 @@ const { data: surroundingArticles } = await useLazyAsyncData(
 
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
+    label: t('LBL_HOME'),
     icon: 'i-heroicons-home',
     to: localePath('/')
   },
@@ -30,7 +31,8 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     icon: 'i-heroicons-square-3-stack-3d'
   },
   {
-    label: article.value?.title
+    label: article.value?.title,
+    to: localePath(`/articles/${slug.value}`),
   }
 ]);
 
@@ -53,7 +55,7 @@ const mappedArticle = computed(() =>
 );
 
 useJsonLdBlogPost(mappedArticle, locale);
-useJsonLdBreadcrumbs(breadcrumbItems.value);
+useJsonLdBreadcrumbs(breadcrumbItems);
 
 function formatPath(path: string): string {
   const pathArray = path.split('/');

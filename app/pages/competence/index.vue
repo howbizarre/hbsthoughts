@@ -22,12 +22,14 @@ const description = {
 
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
+    label: t('LBL_HOME'),
     icon: 'i-heroicons-home',
     to: localePath('/')
   },
   {
     label: t('LBL_COMPETENCIES'),
-    icon: 'i-heroicons-chart-bar-square'
+    icon: 'i-heroicons-chart-bar-square',
+    to: localePath('/competence')
   }
 ]);
 
@@ -39,7 +41,7 @@ useSeoMeta({
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence`,
 });
 
-useJsonLdBreadcrumbs(breadcrumbItems.value);
+useJsonLdBreadcrumbs(breadcrumbItems);
 </script>
 
 <template>

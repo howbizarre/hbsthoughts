@@ -53,11 +53,13 @@ const title = computed(() => seo.value?.content.title[locale.value]);
 const description = computed(() => seo.value?.content.description[locale.value]);
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
+    label: t('LBL_HOME'),
     icon: 'i-heroicons-home',
     to: localePath('/')
   },
   {
     label: title.value,
+    to: localePath('/articles'),
     icon: 'i-heroicons-square-3-stack-3d'
   }
 ]);
@@ -81,7 +83,7 @@ const mappedArticles = computed(() =>
 );
 
 useJsonLdBlogListing(title, description, mappedArticles, locale);
-useJsonLdBreadcrumbs(breadcrumbItems.value);
+useJsonLdBreadcrumbs(breadcrumbItems);
 </script>
 
 <template>

@@ -32,6 +32,7 @@ const description = {
 
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
+    label: t('LBL_HOME'),
     icon: 'i-heroicons-home',
     to: localePath('/')
   },
@@ -41,7 +42,8 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     icon: 'i-heroicons-tag'
   },
   {
-    label: pageTitle
+    label: pageTitle,
+    to: localePath(`/tag/${tag}`),
   }
 ]);
 
@@ -54,7 +56,7 @@ useSeoMeta({
 });
 
 // Add JSON-LD structured data for breadcrumbs
-useJsonLdBreadcrumbs(breadcrumbItems.value);
+useJsonLdBreadcrumbs(breadcrumbItems);
 </script>
 
 <template>

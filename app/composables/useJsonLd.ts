@@ -137,22 +137,47 @@ export function useJsonLdBlogPost(article: Ref<BlogArticleData | null> | Compute
   });
 }
 
-export function useJsonLdBreadcrumbs(breadcrumbItems: BreadcrumbItem[]) {
+export function useJsonLdBreadcrumbs(
+  breadcrumbItems: Ref<any[]> | ComputedRef<any[]>
+) {
   const baseUrl = 'https://thoughts.bizarre.how';
 
+  console.log('breadcrumbItems', breadcrumbItems.value);
+
   const structuredData = computed(() => {
-    if (!breadcrumbItems?.length) {
+    if (!breadcrumbItems.value?.length) {
       return null;
     }
 
-    const itemListElements = breadcrumbItems
-      .filter((item) => item.to && item.label) // Only include items with both to and label
-      .map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.label,
-        item: `${baseUrl}${item.to}`
-      }));
+    const itemListElements = breadcrumbItems.value
+      .map((item, index) => {
+        let url = '';
+        
+        // Handle different types of 'to' values
+        if (item.to) {
+          if (typeof item.to === 'string') {
+            url = `${baseUrl}${item.to}`;
+          } else if (item.to.path) {
+            url = `${baseUrl}${item.to.path}`;
+          } else if (item.to.name) {
+            // Handle named routes - convert to path
+            url = `${baseUrl}${item.to.name}`;
+          }
+        }
+        
+        // Include all items that have a label, even if they don't have a URL (for the last breadcrumb)
+        if (item.label) {
+          return {
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.label,
+            ...(url && { item: url }) // Only add item if URL exists
+          };
+        }
+        
+        return null;
+      })
+      .filter(Boolean); // Remove null items
 
     if (itemListElements.length === 0) {
       return null;

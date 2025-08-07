@@ -27,7 +27,8 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     to: localePath('/')
   },
   {
-    label: title.value
+    label: title.value,
+    to: localePath('/help'),
   }
 ]);
 
@@ -39,7 +40,7 @@ useSeoMeta({
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/help`
 });
 
-useJsonLdBreadcrumbs(breadcrumbItems.value);
+useJsonLdBreadcrumbs(breadcrumbItems);
 </script>
 
 <template>
