@@ -1,5 +1,3 @@
-import type { BreadcrumbItem } from '@nuxt/ui';
-
 export interface BlogArticleData {
   title: string;
   description: string;
@@ -16,11 +14,11 @@ export interface BlogListingData {
   locale: string;
 }
 
-// export interface BreadcrumbData {
-//   label?: string;
-//   to?: string | any; // Allow RouteLocationAsRelativeGeneric and other route types
-//   icon?: string;
-// }
+export interface BreadcrumbData {
+  label?: string;
+  to?: string | any; // Allow RouteLocationAsRelativeGeneric and other route types
+  icon?: string;
+}
 
 export function useJsonLdBlogListing(title: Ref<string | undefined> | ComputedRef<string | undefined>, description: Ref<string | undefined> | ComputedRef<string | undefined>, articles: Ref<BlogArticleData[]> | ComputedRef<BlogArticleData[]>, locale: Ref<string> | ComputedRef<string>) {
   const baseUrl = 'https://thoughts.bizarre.how';
@@ -137,9 +135,7 @@ export function useJsonLdBlogPost(article: Ref<BlogArticleData | null> | Compute
   });
 }
 
-export function useJsonLdBreadcrumbs(
-  breadcrumbItems: Ref<any[]> | ComputedRef<any[]>
-) {
+export function useJsonLdBreadcrumbs(breadcrumbItems: Ref<BreadcrumbData[]> | ComputedRef<BreadcrumbData[]>) {
   const baseUrl = 'https://thoughts.bizarre.how';
 
   const structuredData = computed(() => {
@@ -150,7 +146,7 @@ export function useJsonLdBreadcrumbs(
     const itemListElements = breadcrumbItems.value
       .map((item, index) => {
         let url = '';
-        
+
         // Handle different types of 'to' values
         if (item.to) {
           if (typeof item.to === 'string') {
@@ -162,10 +158,10 @@ export function useJsonLdBreadcrumbs(
             url = `${baseUrl}${item.to.name}`;
           }
         }
-        
+
         // Include all items that have a label (wait for i18n to load)
         const hasValidLabel = item.label && item.label.trim() !== '';
-        
+
         if (hasValidLabel) {
           return {
             '@type': 'ListItem',
@@ -174,7 +170,7 @@ export function useJsonLdBreadcrumbs(
             ...(url && { item: url }) // Only add item if URL exists
           };
         }
-        
+
         return null;
       })
       .filter(Boolean); // Remove null items
