@@ -1,3 +1,5 @@
+import type { BreadcrumbItem } from '@nuxt/ui';
+
 export interface BlogArticleData {
   title: string;
   description: string;
@@ -14,14 +16,15 @@ export interface BlogListingData {
   locale: string;
 }
 
-export function useJsonLdBlogListing(
-  title: Ref<string | undefined> | ComputedRef<string | undefined>,
-  description: Ref<string | undefined> | ComputedRef<string | undefined>,
-  articles: Ref<BlogArticleData[]> | ComputedRef<BlogArticleData[]>,
-  locale: Ref<string> | ComputedRef<string>
-) {
+// export interface BreadcrumbData {
+//   label?: string;
+//   to?: string | any; // Allow RouteLocationAsRelativeGeneric and other route types
+//   icon?: string;
+// }
+
+export function useJsonLdBlogListing(title: Ref<string | undefined> | ComputedRef<string | undefined>, description: Ref<string | undefined> | ComputedRef<string | undefined>, articles: Ref<BlogArticleData[]> | ComputedRef<BlogArticleData[]>, locale: Ref<string> | ComputedRef<string>) {
   const baseUrl = 'https://thoughts.bizarre.how';
-  
+
   const structuredData = computed(() => {
     if (!title.value || !description.value || !articles.value?.length) {
       return null;
@@ -48,7 +51,7 @@ export function useJsonLdBlogListing(
         },
         publisher: {
           '@type': 'Organization',
-          name: 'How Bizarre\' Thoughts',
+          name: "How Bizarre' Thoughts",
           url: baseUrl
         },
         mainEntityOfPage: {
@@ -62,7 +65,7 @@ export function useJsonLdBlogListing(
   useHead({
     script: computed(() => {
       if (!structuredData.value) return [];
-      
+
       return [
         {
           type: 'application/ld+json',
@@ -73,12 +76,9 @@ export function useJsonLdBlogListing(
   });
 }
 
-export function useJsonLdBlogPost(
-  article: Ref<BlogArticleData | null> | ComputedRef<BlogArticleData | null>,
-  locale: Ref<string> | ComputedRef<string>
-) {
+export function useJsonLdBlogPost(article: Ref<BlogArticleData | null> | ComputedRef<BlogArticleData | null>, locale: Ref<string> | ComputedRef<string>) {
   const baseUrl = 'https://thoughts.bizarre.how';
-  
+
   const structuredData = computed(() => {
     if (!article.value) {
       return null;
@@ -100,7 +100,7 @@ export function useJsonLdBlogPost(
       },
       publisher: {
         '@type': 'Organization',
-        name: 'How Bizarre\'s Thoughts',
+        name: "How Bizarre's Thoughts",
         url: baseUrl,
         logo: {
           '@type': 'ImageObject',
@@ -126,7 +126,49 @@ export function useJsonLdBlogPost(
   useHead({
     script: computed(() => {
       if (!structuredData.value) return [];
-      
+
+      return [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(structuredData.value)
+        }
+      ];
+    })
+  });
+}
+
+export function useJsonLdBreadcrumbs(breadcrumbItems: BreadcrumbItem[]) {
+  const baseUrl = 'https://thoughts.bizarre.how';
+
+  const structuredData = computed(() => {
+    if (!breadcrumbItems?.length) {
+      return null;
+    }
+
+    const itemListElements = breadcrumbItems
+      .filter((item) => item.to && item.label) // Only include items with both to and label
+      .map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.label,
+        item: `${baseUrl}${item.to}`
+      }));
+
+    if (itemListElements.length === 0) {
+      return null;
+    }
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: itemListElements
+    };
+  });
+
+  useHead({
+    script: computed(() => {
+      if (!structuredData.value) return [];
+
       return [
         {
           type: 'application/ld+json',

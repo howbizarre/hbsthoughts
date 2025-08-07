@@ -53,6 +53,7 @@ const mappedArticle = computed(() =>
 );
 
 useJsonLdBlogPost(mappedArticle, locale);
+useJsonLdBreadcrumbs(breadcrumbItems.value);
 
 function formatPath(path: string): string {
   const pathArray = path.split('/');

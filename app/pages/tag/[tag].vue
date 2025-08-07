@@ -52,6 +52,9 @@ useSeoMeta({
   ogDescription: () => description[(locale.value as 'bg' | 'en')],
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/tag/${tag}`,
 });
+
+// Add JSON-LD structured data for breadcrumbs
+useJsonLdBreadcrumbs(breadcrumbItems.value);
 </script>
 
 <template>

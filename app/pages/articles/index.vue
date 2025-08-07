@@ -81,6 +81,7 @@ const mappedArticles = computed(() =>
 );
 
 useJsonLdBlogListing(title, description, mappedArticles, locale);
+useJsonLdBreadcrumbs(breadcrumbItems.value);
 </script>
 
 <template>

@@ -50,6 +50,8 @@ useSeoMeta({
   ogDescription: () => description[(locale.value as 'bg' | 'en')],
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence/${competence}`,
 });
+
+useJsonLdBreadcrumbs(breadcrumbItems.value);
 </script>
 
 <template>

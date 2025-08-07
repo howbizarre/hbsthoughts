@@ -38,6 +38,8 @@ useSeoMeta({
   ogDescription: () => description.value,
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/help`
 });
+
+useJsonLdBreadcrumbs(breadcrumbItems.value);
 </script>
 
 <template>
