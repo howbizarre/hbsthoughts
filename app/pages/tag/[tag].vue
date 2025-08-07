@@ -23,12 +23,16 @@ const { data: tagData } = await useLazyAsyncData(
   watch: [locale]
 });
 
+const articles = computed(() => tagData.value || []);
 const pageTag = t((`TAG_${(tag)}`).toUpperCase());
-const pageTitle = `${pageTag} ${t('LBL_TAG')}`;
+
 const description = {
   "bg": `Тагът '${pageTag}' е ключова дума за лесно филтриране на статиите по тематики.`,
   "en": `The tag '${pageTag}' is a keyword for easy filtering of articles by topics.`
 };
+
+const pageTitle = computed(() => `${pageTag} ${t('LBL_TAG')}`);
+const pageDescription = computed(() => description[(locale.value as 'bg' | 'en')]);
 
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
@@ -42,20 +46,30 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
     icon: 'i-heroicons-tag'
   },
   {
-    label: pageTitle,
+    label: pageTitle.value,
     to: localePath(`/tag/${tag}`),
   }
 ]);
 
 useSeoMeta({
-  title: () => pageTitle,
-  description: () => description[(locale.value as 'bg' | 'en')],
-  ogTitle: () => pageTitle,
-  ogDescription: () => description[(locale.value as 'bg' | 'en')],
+  title: () => pageTitle.value,
+  description: () => pageDescription.value,
+  ogTitle: () => pageTitle.value,
+  ogDescription: () => pageDescription.value,
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/tag/${tag}`,
 });
 
-// Add JSON-LD structured data for breadcrumbs
+// Add JSON-LD structured data for blog listing
+const mappedArticles = computed(() =>
+  articles.value.map(article => ({
+    title: article.title,
+    description: article.description,
+    date: article.date,
+    path: article.path
+  }))
+);
+
+useJsonLdBlogListing(pageTitle, pageDescription, mappedArticles, locale);
 useJsonLdBreadcrumbs(breadcrumbItems);
 </script>
 

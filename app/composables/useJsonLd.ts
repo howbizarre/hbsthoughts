@@ -51,7 +51,7 @@ export function useJsonLdBlogListing(title: Ref<string | undefined> | ComputedRe
         },
         publisher: {
           '@type': 'Organization',
-          name: "How Bizarre' Thoughts",
+          name: "How Bizarre's Thoughts",
           url: baseUrl
         },
         mainEntityOfPage: {
