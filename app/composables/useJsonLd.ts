@@ -142,8 +142,6 @@ export function useJsonLdBreadcrumbs(
 ) {
   const baseUrl = 'https://thoughts.bizarre.how';
 
-  console.log('breadcrumbItems', breadcrumbItems.value);
-
   const structuredData = computed(() => {
     if (!breadcrumbItems.value?.length) {
       return null;
@@ -165,8 +163,10 @@ export function useJsonLdBreadcrumbs(
           }
         }
         
-        // Include all items that have a label, even if they don't have a URL (for the last breadcrumb)
-        if (item.label) {
+        // Include all items that have a label (wait for i18n to load)
+        const hasValidLabel = item.label && item.label.trim() !== '';
+        
+        if (hasValidLabel) {
           return {
             '@type': 'ListItem',
             position: index + 1,
