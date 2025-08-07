@@ -19,6 +19,7 @@ HB's Thoughts is a personal blog featuring articles mostly about Vue, Nuxt, Tail
 - **Search Functionality**: Full-text search with Fuse.js
 - **Tag System**: Articles organized by tags and competencies
 - **SEO Optimized**: Server-side rendering with optimized meta tags
+- **Structured Data**: JSON-LD structured data for blog posts, listings, and breadcrumbs
 - **Cloud Deployment**: Deployed on Cloudflare Workers
 - **Responsive Design**: Mobile-first responsive layout
 
@@ -76,6 +77,7 @@ The site will be available at `http://localhost:7410`
 ```
 ├── app/                    # Nuxt app directory
 │   ├── components/         # Vue components
+│   ├── composables/        # Vue composables (JSON-LD, utilities)
 │   ├── layouts/           # Layout components
 │   ├── pages/             # Page components and routing
 │   └── assets/            # Static assets
@@ -114,6 +116,48 @@ competence: "frontend"
 
 Article content here...
 ```
+
+## 🔍 SEO & Structured Data
+
+The blog implements comprehensive SEO optimization with JSON-LD structured data:
+
+### JSON-LD Implementation
+
+The application includes three types of structured data using Schema.org vocabulary:
+
+1. **Blog Listing** (`useJsonLdBlogListing`):
+   - Generates `Blog` schema for article listing pages
+   - Includes all articles with their metadata
+   - Automatically updates when articles are loaded
+
+2. **Blog Posts** (`useJsonLdBlogPost`):
+   - Generates `BlogPosting` schema for individual articles
+   - Includes author, publisher, dates, and article metadata
+   - Supports optional featured images
+
+3. **Breadcrumbs** (`useJsonLdBreadcrumbs`):
+   - Generates `BreadcrumbList` schema for navigation
+   - Works with Nuxt UI breadcrumb components
+   - Handles multilingual routes and dynamic content
+
+### Usage
+
+The JSON-LD composables are automatically imported and can be used in any page:
+
+```vue
+<script setup>
+// For article listings
+useJsonLdBlogListing(title, description, articles, locale);
+
+// For individual blog posts
+useJsonLdBlogPost(article, locale);
+
+// For breadcrumb navigation
+useJsonLdBreadcrumbs(breadcrumbItems);
+</script>
+```
+
+All structured data is reactive and updates automatically when content changes.
 
 ## 🚀 Deployment
 
