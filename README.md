@@ -11,7 +11,7 @@
 
 ---
 
-A modern blog built with Nuxt 4, focused on articles about Vue, Nuxt, TailwindCSS, TypeScript, and front-end development.
+A simple blog system built with Nuxt 4, focused on articles about Vue, Nuxt, TailwindCSS, TypeScript, and front-end development.
 
 ## 🌐 Live Site
 
@@ -224,7 +224,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ---
 
-Модерен блог построен с Nuxt 4, фокусиран върху статии за Vue, Nuxt, TailwindCSS, TypeScript и фронт-енд разработка.
+Малка блог система построен с Nuxt 4, фокусиран върху статии за Vue, Nuxt, TailwindCSS, TypeScript и фронт-енд разработка.
 
 ## 🌐 Живо Сайт
 

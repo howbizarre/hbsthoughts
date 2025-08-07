@@ -1,6 +1,6 @@
 # HB's Thoughts
 
-A modern blog built with Nuxt 4, focused on articles about Vue, Nuxt, TailwindCSS, TypeScript, and front-end development.
+A simple blog system built with Nuxt 4, focused on articles about Vue, Nuxt, TailwindCSS, TypeScript, and front-end development.
 
 ## 🌐 Live Site
 
