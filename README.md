@@ -172,7 +172,7 @@ All structured data is reactive and updates automatically when content changes.
 
 ### Site Maps
 
-The blog generates a sitemap for *[SEO]: Search Engine Optimization* purposes, which includes all articles and static pages.
+The blog generates a sitemap for SEO *(Search Engine Optimization)* purposes, which includes all articles and static pages.
 The sitemap is automatically updated when new content is added, thanks to the **Nuxt Sitemap** module.
 
 ## 🚀 Deployment
@@ -385,7 +385,7 @@ useJsonLdBreadcrumbs(breadcrumbItems);
 
 ### Карти на Сайта
 
-Блогът генерира карта на сайта за SEO ***(Search Engine Optimization)*** цели, която включва всички статии и статични страници.
+Блогът генерира карта на сайта за SEO *(Search Engine Optimization)* цели, която включва всички статии и статични страници.
 Картата на сайта се актуализира автоматично, когато се добави ново съдържание, благодарение на Nuxt Sitemap модула.
 
 ## 🚀 Инсталация
