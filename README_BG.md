@@ -195,5 +195,7 @@ npm run deploy
 
 - Построен с [Nuxt 4](https://nuxt.com/)
 - UI компоненти от [Nuxt UI](https://ui.nuxt.com/)
+- Съдържание от [Nuxt Content](https://content.nuxt.com/)
+- Многоезична поддръжка с [Nuxt i18n](https://i18n.nuxtjs.org/)
 - Икони от [Heroicons](https://heroicons.com/)
 - Шрифтове от [Google Fonts](https://fonts.google.com/)
