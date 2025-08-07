@@ -1,5 +1,7 @@
 # HB's Thoughts
 
+![Screenshot](./app/assets/img/screenshot.png)
+
 <div align="center">
 
 ## 🌍 Choose Language / Изберете Език
