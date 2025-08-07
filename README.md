@@ -7,7 +7,7 @@
 </div>
 
 <details open>
-<summary><strong>🇬🇧 English [README_EN.md](./README_EN.md)</strong></summary>
+<summary><strong>🇬🇧 English</strong> <small>(README_EN.md)</small></summary>
 
 ---
 
@@ -214,7 +214,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 </details>
 
 <details>
-<summary><strong>🇧🇬 Български [README_BG.md](./README_BG.md)</strong></summary>
+<summary><strong>🇧🇬 Български</strong>  <small>(README_BG.md)</small></summary>
 
 ---
 
