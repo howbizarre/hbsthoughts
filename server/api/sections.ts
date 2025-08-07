@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const { collectionName } = getQuery(event) as { collectionName: 'articles_bg' | 'articles_en' };
+  const { collectionName } = getQuery(event) as { collectionName: 'bg_articles' | 'en_articles' };
 
   // Добавете проверка, за да сте сигурни, че collectionName е налично
   if (!collectionName || typeof collectionName !== 'string') {
