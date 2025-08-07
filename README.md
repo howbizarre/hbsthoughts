@@ -210,6 +210,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - Multilingual support with [Nuxt i18n](https://i18n.nuxtjs.org/)
 - Icons from [Heroicons](https://heroicons.com/)
 - Fonts from [Google Fonts](https://fonts.google.com/)
+- Back-end [Cloudflare Workers](https://workers.cloudflare.com/)
 
 </details>
 
@@ -417,5 +418,6 @@ npm run deploy
 - Многоезична поддръжка с [Nuxt i18n](https://i18n.nuxtjs.org/)
 - Икони от [Heroicons](https://heroicons.com/)
 - Шрифтове от [Google Fonts](https://fonts.google.com/)
+- Back-end [Cloudflare Workers](https://workers.cloudflare.com/)
 
 </details>

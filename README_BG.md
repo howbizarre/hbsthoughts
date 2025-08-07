@@ -199,3 +199,4 @@ npm run deploy
 - Многоезична поддръжка с [Nuxt i18n](https://i18n.nuxtjs.org/)
 - Икони от [Heroicons](https://heroicons.com/)
 - Шрифтове от [Google Fonts](https://fonts.google.com/)
+- Back-end [Cloudflare Workers](https://workers.cloudflare.com/)
