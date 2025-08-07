@@ -43,11 +43,12 @@ export function useJsonLdBlogListing(
         dateModified: new Date(article.date).toISOString(),
         author: {
           '@type': 'Person',
-          name: article.author || 'HowBizarre'
+          name: article.author || 'How Bizarre',
+          url: 'https://bizarre.how'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'HowBizarre Thoughts',
+          name: 'How Bizarre\' Thoughts',
           url: baseUrl
         },
         mainEntityOfPage: {
@@ -94,11 +95,12 @@ export function useJsonLdBlogPost(
       inLanguage: locale.value,
       author: {
         '@type': 'Person',
-        name: article.value.author || 'HowBizarre'
+        name: article.value.author || 'How Bizarre',
+        url: 'https://bizarre.how'
       },
       publisher: {
         '@type': 'Organization',
-        name: 'HowBizarre Thoughts',
+        name: 'How Bizarre\'s Thoughts',
         url: baseUrl,
         logo: {
           '@type': 'ImageObject',

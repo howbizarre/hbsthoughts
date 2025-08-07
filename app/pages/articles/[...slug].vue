@@ -55,7 +55,6 @@ const mappedArticle = computed(() =>
 useJsonLdBlogPost(mappedArticle, locale);
 
 function formatPath(path: string): string {
-  console.log('path', path);
   const pathArray = path.split('/');
   return `/${pathArray[2]}/${pathArray[1]}/${pathArray[3]}`;
 }
