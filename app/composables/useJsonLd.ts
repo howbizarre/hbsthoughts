@@ -112,7 +112,7 @@ export function useJsonLdBlogPost(article: Ref<BlogArticleData | null> | Compute
     };
 
     if (article.value.image) {
-      data.image = [`${baseUrl}${article.value.image}`];
+      data["image"] = [`${baseUrl}${article.value.image}`];
     }
 
     return data;
