@@ -72,8 +72,8 @@ function formatPath(path: string): string {
       <h1 class="text-4xl font-medium">{{ article?.title }}</h1>
     </header>
 
-    <div class="flex justify-center mb-10 p-5 rounded-xl bg-gray-500/10">
-      <img v-if="article?.image" :src="article.image" alt="Article Image" class="rounded-xl shadow-lg max-w-full h-auto" />
+    <div v-if="article?.image" class="flex justify-center mb-10 p-5 rounded-xl bg-gray-500/10">
+      <img :src="article.image" alt="Article Image" class="rounded-xl shadow-lg max-w-full h-auto" />
     </div>
 
     <ContentRenderer v-if="article" :value="article" class="prose dark:prose-invert max-w-full px-5" />
