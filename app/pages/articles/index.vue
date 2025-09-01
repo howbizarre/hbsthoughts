@@ -91,7 +91,7 @@ useJsonLdBreadcrumbs(breadcrumbItems);
     <LayoutBreadcrumb :items="breadcrumbItems" />
 
     <h1 class="text-3xl font-medium px-5 m-0">
-      {{ title }}
+      <UIcon name="i-heroicons-square-3-stack-3d" class="size-5" /> {{ title }}
     </h1>
 
     <template v-if="pending">

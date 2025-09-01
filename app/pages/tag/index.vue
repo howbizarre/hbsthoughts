@@ -46,7 +46,7 @@ useJsonLdBreadcrumbs(breadcrumbItems);
     <LayoutBreadcrumb :items="breadcrumbItems" />
 
     <h1 class="text-3xl font-medium px-5 m-0">
-      {{ t('LBL_TAGS') }}
+      <UIcon name="i-heroicons-tag" class="size-5" /> {{ t('LBL_TAGS') }}
     </h1>
 
     <div class="excerpt-card text-center">

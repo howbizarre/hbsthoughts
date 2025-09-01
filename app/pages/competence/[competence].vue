@@ -45,6 +45,7 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
     label: pageTitle.value,
     to: localePath(`/competence/${competence}`),
+    icon: 'i-heroicons-academic-cap'
   }
 ]);
 
@@ -75,7 +76,7 @@ useJsonLdBreadcrumbs(breadcrumbItems);
     <LayoutBreadcrumb :items="breadcrumbItems" />
 
     <h1 class="text-3xl font-medium px-5 m-0">
-      {{ pageTitle }}
+      <UIcon name="i-heroicons-academic-cap" class="size-5" /> {{ pageTitle }}
     </h1>
 
     <div v-for="value in competenceData" :key="value.date" class="rounded-2xl mb-4">

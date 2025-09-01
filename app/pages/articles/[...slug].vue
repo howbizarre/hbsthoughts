@@ -33,6 +33,7 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
     label: article.value?.title,
     to: localePath(`/articles/${slug.value}`),
+    icon: 'i-heroicons-book-open'
   }
 ]);
 

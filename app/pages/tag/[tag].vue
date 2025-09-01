@@ -48,6 +48,7 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   {
     label: pageTitle.value,
     to: localePath(`/tag/${tag}`),
+    icon: 'i-heroicons-hashtag'
   }
 ]);
 
@@ -78,7 +79,7 @@ useJsonLdBreadcrumbs(breadcrumbItems);
     <LayoutBreadcrumb :items="breadcrumbItems" />
 
     <h1 class="text-3xl font-medium px-5 m-0">
-      {{ pageTitle }}
+      <UIcon name="i-heroicons-hashtag" class="size-5" /> {{ pageTitle }}
     </h1>
 
     <div v-for="value in tagData" :key="value.date" class="rounded-2xl mb-4">
