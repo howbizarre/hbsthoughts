@@ -10,7 +10,17 @@ const allTags = allArticles
   .flatMap(article => Array.isArray(article.tags) ? article.tags : [])
   .filter(Boolean);
 
-const uniqueTags = [...new Set(allTags)];
+const uniqueTags = computed(() => {
+  const tags = [...new Set(allTags)];
+
+  return tags.sort((a, b) =>
+    t((`TAG_${a}`).toUpperCase()).localeCompare(
+      t((`TAG_${b}`).toUpperCase()),
+      locale.value,
+      { sensitivity: 'base' }
+    )
+  );
+});
 
 const description = {
   "bg": `Всички активни тагове в сайта.`,
