@@ -15,11 +15,11 @@ useHead({
 </script>
 
 <template>
-  <UContainer class="pb-3">
+  <UContainer class="pb-3 min-h-screen flex flex-col">
     <LayoutLogos />
     <LayoutHeader />
 
-    <main class="max-w-3xl mx-auto content">
+    <main class="max-w-3xl w-full mx-auto content flex-1">
       <slot />
     </main>
 

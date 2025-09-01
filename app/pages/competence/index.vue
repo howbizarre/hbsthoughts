@@ -52,7 +52,7 @@ useJsonLdBreadcrumbs(breadcrumbItems);
       <UIcon name="i-heroicons-chart-bar-square" class="size-5" /> {{ t('LBL_COMPETENCIES') }}
     </h1>
 
-    <div class="excerpt-card text-center">
+    <div class="excerpt-card">
       <div class="absolute inline-flex items-center justify-center text-xs px-2 py-1 bg-white text-black dark:bg-black dark:text-white mr-0.5 rounded-full -top-2 -end-2">
         {{ t("LBL_COMPETENCIES") }}
       </div>
