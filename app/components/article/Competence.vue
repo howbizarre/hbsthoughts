@@ -11,9 +11,8 @@ const path = computed(() => `/${locale.value}/competence/${competence.value}`);
 
 <template>
   <NuxtLink :to="path"
-            :class="active ? 'bg-white text-black dark:bg-black dark:text-white' : 'bg-gray-500 !text-white'"
             :title="`${t('LBL_LOOK_AT')} ${t('LBL_COMPETENCE')} ${t((`COMPETENCE_${competence}`).toUpperCase())}`"
-            class="py-1 px-2 m-1 sm:mx-1 rounded-xl text-xs inline-block">
+            class="bg-white/50 text-black hover:bg-white dark:bg-black dark:hover:bg-white/20 dark:text-white border border-white dark:border-black/50 transition-colors ease-in-out duration-200 py-1 px-2 m-1 sm:mx-1 rounded-xl text-xs inline-block">
     {{ t((`COMPETENCE_${competence}`).toUpperCase()) }}
   </NuxtLink>
 </template>

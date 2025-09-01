@@ -59,7 +59,7 @@ useJsonLdBreadcrumbs(breadcrumbItems);
 
       <template v-for="(doc, index) in uniqueCompetence" :key="`${doc}-${index}`">
         <NuxtLink :to="localePath(`/competence/${doc}`)"
-                  class="bg-white/50 text-black/75 hover:bg-white hover:text-black dark:bg-black/50 dark:text-white/75 dark:hover:bg-black dark:hover:text-white transition-colors ease-in-out duration-300 py-1 px-2 m-1 sm:mx-1 rounded-xl text-md inline-block">
+                  class="bg-white/50 text-black/75 hover:bg-white hover:text-black dark:bg-black/50 dark:text-white/75 dark:hover:bg-black dark:hover:text-white transition-colors ease-in-out duration-300 border border-white/75 dark:border-white/15 py-1 px-2 m-1 sm:mx-1 rounded-xl text-md inline-block">
           {{ t((`COMPETENCE_${doc}`).toUpperCase()) }}
         </NuxtLink>
       </template>
