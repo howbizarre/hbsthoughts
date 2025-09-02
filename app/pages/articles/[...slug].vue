@@ -4,7 +4,6 @@ import type { BreadcrumbItem } from '@nuxt/ui';
 const { t, locale } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
-const colorMode = useColorMode();
 const slug = ref(route.params.slug);
 
 const { data: article } = await useLazyAsyncData(`${route.path}-${slug.value}`, async () => {
@@ -58,24 +57,6 @@ const mappedArticle = computed(() =>
 
 useJsonLdBlogPost(mappedArticle, locale);
 useJsonLdBreadcrumbs(breadcrumbItems);
-
-// SSR-friendly image handling
-const imageSrc = ref(article.value?.image); // default light image (SSR)
-
-onMounted(() => {
-  if (colorMode.value === 'dark' && article.value?.imageDark) {
-    imageSrc.value = article.value.imageDark;
-  }
-});
-
-// Watch for colorMode changes after initial mount
-watch(() => colorMode.value, (newMode) => {
-  if (newMode === 'dark' && article.value?.imageDark) {
-    imageSrc.value = article.value.imageDark;
-  } else if (newMode === 'light' && article.value?.image) {
-    imageSrc.value = article.value.image;
-  }
-});
 </script>
 
 <template>
@@ -88,11 +69,9 @@ watch(() => colorMode.value, (newMode) => {
     </header>
 
     <div v-if="article?.image" class="flex justify-center mb-10 p-5 rounded-xl bg-gray-500/10">
-      <img
-        :src="imageSrc"
-        :alt="`${t('LBL_ILLUSTRATIVE_IMAGE')} ${article.title}`"
-        class="rounded-xl shadow-lg max-w-full h-auto transition-opacity duration-300"
-      />
+      <img :src="article.image"
+           :alt="`${t('LBL_ILLUSTRATIVE_IMAGE')} ${article.title}`"
+           class="rounded-xl shadow-lg max-w-full h-auto transition-opacity duration-300" />
     </div>
 
     <ContentRenderer v-if="article" :value="article" class="prose dark:prose-invert max-w-full px-5" />
