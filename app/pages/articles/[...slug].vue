@@ -79,12 +79,12 @@ useJsonLdBreadcrumbs(breadcrumbItems);
     <div class="px-5">
       <hr class="h-line" />
 
-      <div v-if="article?.competence" class="text-sm flex justify-start items-center gap-2">
+      <div v-if="article?.competence" class="text-sm flex justify-start items-center gap-2 px-5">
         <span>{{ t("LBL_COMPETENCE") }}:</span>
         <ArticleCompetence :competence="article.competence" />
       </div>
 
-      <div v-if="article?.tags" class="text-sm flex justify-start items-center gap-2 mt-2">
+      <div v-if="article?.tags" class="text-sm flex justify-start items-center gap-2 mt-2 px-5">
         <span>{{ t("LBL_TAGS") }}:</span>
         <template v-for="tag in article.tags">
           <ArticleTag :tag="tag" />
@@ -123,8 +123,6 @@ useJsonLdBreadcrumbs(breadcrumbItems);
           </NuxtLink>
         </template>
       </div>
-
-      <hr class="h-line" />
     </div>
   </article>
 </template>
