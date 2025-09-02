@@ -5,10 +5,10 @@ const articleSchema = z.object({
   title: z.string().min(3).max(100),
   date: z.date(),
   draft: z.boolean().default(false),
-  tags: z.array(z.string()),
+  tags: z.array(z.string().nonempty()),
   slug: z.string(),
   navigation: z.boolean().default(false),
-  competence: z.array(z.string()),
+  competence: z.string().nonempty(),
   image: z.string().optional(),
   excerpt: z.object({
     type: z.string(),

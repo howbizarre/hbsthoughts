@@ -79,6 +79,22 @@ useJsonLdBreadcrumbs(breadcrumbItems);
     <div class="px-5">
       <hr class="h-line" />
 
+      <div v-if="article?.competence" class="text-sm flex justify-start items-center gap-2">
+        <span>{{ t("LBL_COMPETENCE") }}:</span>
+        <ArticleCompetence :competence="article.competence" />
+      </div>
+
+      <div v-if="article?.tags" class="text-sm flex justify-start items-center gap-2 mt-2">
+        <span>{{ t("LBL_TAGS") }}:</span>
+        <template v-for="tag in article.tags">
+          <ArticleTag :tag="tag" />
+        </template>
+      </div>
+    </div>
+
+    <div class="px-5">
+      <hr class="h-line" />
+
       <div class="grid gap-8 sm:grid-cols-2">
         <template v-if="surroundingArticles?.[1]">
           <NuxtLink :to="surroundingArticles[1].path"
