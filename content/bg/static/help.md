@@ -26,3 +26,8 @@
 >I am a Front-end Senpai, who strictly follows the W3Code of Bushido!.
 
 Обичам да използвам тази фраза. А иначе, аз съм **Коста**, още познат като **HowBizarre**, и заедно със семейството си работя и живея в **София**, **България**. Може да разгледате профилите ми в [GitHub](https://github.com/howbizarre), [X](https://x.com/howbizarre) и [LinkedIn](https://www.linkedin.com/in/howbizarre).
+
+## И малко за Изкуствения Интелект
+
+1. [Кратък индекс](/llms.txt) на сайта, за да подпомогне Езиковите модели.
+2. [Разширен индекс](/llms-full.txt) на сайта, който включва и съдържанието на статиите.

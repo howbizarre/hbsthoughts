@@ -30,3 +30,8 @@ I like to use that phrase. Otherwise, I am **Kosta**, also known as **HowBizarre
 ## FYI
 
 For translation from my native language, Bulgarian, to English, I use some AI helpers such as **DeepL**, **CoPilot**, **Gemini**, and **Google Translate** with corrections, and adjustments. I am not a native English speaker, so please let me know if you find any mistakes. Thank you!
+
+## A bit about Artificial Intelligence
+
+1. [Short index](/llms.txt) of the site to assist Language Models.
+2. [Extended index](/llms-full.txt) of the site, which includes the content of the articles.

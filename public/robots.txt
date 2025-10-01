@@ -1,9 +1,13 @@
 User-Agent: *
 Disallow:
+Allow: /llms.txt
+Allow: /llms-full.txt
 
-Sitemap: https://thoughts.bizarre.how/sitemap.xml
-Sitemap: https://thoughts.bizarre.how/sitemap_index.xml
 Sitemap: https://thoughts.bizarre.how/__sitemap__/en.xml
 Sitemap: https://thoughts.bizarre.how/__sitemap__/bg.xml
+Sitemap: https://thoughts.bizarre.how/sitemap_index.xml
+Sitemap: https://thoughts.bizarre.how/sitemap.xml
 
-LLMS: https://thoughts.bizarre.how/llms.txt
+# Site content indexes
+# Llm-index: https://thoughts.bizarre.how/llms.txt
+# Llm-index: https://thoughts.bizarre.how/llms-full.txt

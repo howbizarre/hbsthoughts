@@ -98,7 +98,11 @@ export default defineNuxtConfig({
   llms: {
     domain: 'https://thoughts.bizarre.how',
     title: "HB's Thoughts",
-    description: 'Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end.'
+    description: 'Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end.',
+    full: {
+      title: "HB's Thoughts",
+      description: 'Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end.'
+    }
   },
 
   compatibilityDate: '2025-07-15',
