@@ -33,5 +33,8 @@ For translation from my native language, Bulgarian, to English, I use some AI he
 
 ## A bit about Artificial Intelligence
 
-1. [Short index](/llms.txt) of the site to assist Language Models.
-2. [Extended index](/llms-full.txt) of the site, which includes the content of the articles.
+<p>
+  <a href="/llms.txt" target="_blank" rel="noopener">Short index</a> of the site to assist Language Models.
+  <br />
+  <a href="/llms-full.txt" target="_blank" rel="noopener">Extended index</a> of the site, which includes the content of the articles.
+</p>
