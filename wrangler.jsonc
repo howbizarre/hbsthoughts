@@ -5,6 +5,7 @@
   "observability": { "enabled": true },
   "placement": { "mode": "smart" },
   "keep_vars": true,
+  "preview_urls": false,
   "d1_databases": [
     {
       "binding": "DB",

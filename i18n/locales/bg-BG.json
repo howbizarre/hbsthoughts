@@ -47,6 +47,7 @@
   "TAG_VUE": "Vue",
   "TAG_VUE-ROUTER": "Vue Router",
   "TAG_WEB-WORKERS": "Web Workers",
+  "TAG_WORKER": "Worker",
   "THE_QUESTION": "Ако Вселената е отговорът, какъв е въпросът?!",
   "TXT_DARK_SIDE_SWITCH": "Преминете на тъмна страна",
   "TXT_ERROR_WEB_ADDRESS": "Грешка в адреса на страницата",
