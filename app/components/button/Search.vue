@@ -32,7 +32,7 @@ const normalizeUrl = (url: string) => url.split('#')[0];
                    variant="ghost"
                    size="md"
                    :aria-label="t('LBL_SEARCH')"
-                   class="flex items-center justify-center rounded-xl p-2 text-sm font-medium transition-colors duration-150 ease-in bg-gray-100 hover:bg-gray-300/75 dark:bg-gray-800/75 dark:hover:bg-gray-700 cursor-pointer" />
+                   class="flex items-center justify-center rounded-xl p-2 text-sm font-medium transition-colors duration-150 ease-in bg-gray-50/25 hover:bg-gray-50/75 dark:bg-gray-950/25 dark:hover:bg-gray-950/75 cursor-pointer" />
         </UTooltip>
 
         <template #content>

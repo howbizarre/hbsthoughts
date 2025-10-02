@@ -45,7 +45,7 @@ onMounted(() => doRound());
           </NuxtLink>
         </div>
 
-        <p class="text-gray-500">{{ t('THE_QUESTION') }}</p>
+        <p class="text-black/75 dark:text-white/75">{{ t('THE_QUESTION') }}</p>
       </div>
     </div>
   </div>
