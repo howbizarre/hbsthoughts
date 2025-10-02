@@ -6,22 +6,17 @@
   --breakpoint-xs: 30rem;
 }
 
-body,
-html {
-  @apply flex flex-col;
-}
-html {
-  @apply size-full;
-}
+html { @apply size-full; }
+
 body {
-  @apply min-h-full min-w-full 
-         text-gray-700 dark:text-gray-300 relative font-sans 
-         bg-[url('/images/micron.svg')] dark:bg-[url('/images/gulf.svg')] 
+  @apply min-h-dvh min-w-full
+         text-gray-700 dark:text-gray-300 relative font-sans
+         bg-[url('/images/micron.svg')] dark:bg-[url('/images/gulf.svg')]
          bg-[#f9f4ff]! dark:bg-[#02013e]!
-         bg-no-repeat bg-fixed bg-auto
+         bg-no-repeat bg-auto
          bg-[right_-16rem_bottom_10rem]
          sm:bg-[right_-12rem_bottom_13rem]
-         md:bg-[right_-8rem_bottom_16rem]
+         md:bg-fixed md:bg-[right_-8rem_bottom_16rem]
          lg:bg-[right_-4rem_bottom_19rem]
          xl:bg-[right_0rem_bottom_21rem];
 }
