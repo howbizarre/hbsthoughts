@@ -17,7 +17,7 @@ body {
   @apply min-h-full min-w-full 
          text-gray-700 dark:text-gray-300 relative font-sans 
          bg-[url('/images/micron.svg')] dark:bg-[url('/images/gulf.svg')] 
-         bg-[#d7f2fe] dark:bg-[#04124f] 
+         bg-[#f9f4ff] dark:bg-[#02013e]
          bg-no-repeat bg-fixed 
          bg-[right_-16rem_bottom_10rem]
          sm:bg-[right_-12rem_bottom_13rem]
@@ -56,6 +56,10 @@ h6,
 }
 
 @layer base {
+  .shiki-themes {
+    @apply bg-[#f9f4ff97]! dark:bg-[#04124f97]! border-[#04124f15]! dark:border-[#f9f4ff15]! shadow-lg!;
+  }
+
   .content {
     @apply selection:bg-gray-950 dark:selection:bg-gray-50 selection:text-gray-50 dark:selection:text-gray-950;
 
