@@ -68,7 +68,16 @@ const mappedArticles = computed(() =>
 );
 
 useJsonLdBlogListing(pageTitle, pageDescription, mappedArticles, locale);
-useJsonLdBreadcrumbs(breadcrumbItems);
+
+const breadcrumbData = computed(() =>
+  breadcrumbItems.value.map(item => ({
+    label: item.label,
+    to: item.to,
+    icon: typeof item.icon === 'string' ? item.icon : undefined
+  }))
+);
+
+useJsonLdBreadcrumbs(breadcrumbData);
 </script>
 
 <template>

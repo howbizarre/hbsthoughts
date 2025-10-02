@@ -48,7 +48,11 @@ useSeoMeta({
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/tag`,
 });
 
-useJsonLdBreadcrumbs(breadcrumbItems);
+useJsonLdBreadcrumbs(computed(() => breadcrumbItems.value.map(item => ({
+  label: item.label,
+  to: item.to,
+  icon: typeof item.icon === 'string' ? item.icon : undefined
+}))));
 </script>
 
 <template>

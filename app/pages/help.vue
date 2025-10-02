@@ -32,15 +32,19 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   }
 ]);
 
+const breadcrumbData = computed(() => breadcrumbItems.value.map(item => ({
+  label: item.label,
+  to: item.to
+})));
+
 useSeoMeta({
   title: () => title.value,
   description: () => description.value,
-  ogTitle: () => title.value,
   ogDescription: () => description.value,
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/help`
 });
 
-useJsonLdBreadcrumbs(breadcrumbItems);
+useJsonLdBreadcrumbs(breadcrumbData);
 </script>
 
 <template>

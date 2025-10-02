@@ -33,15 +33,20 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   }
 ]);
 
+const breadcrumbData = computed(() => breadcrumbItems.value.map(item => ({
+  label: item.label,
+  to: item.to,
+  icon: typeof item.icon === 'string' ? item.icon : undefined
+})));
+
 useSeoMeta({
   title: () => t('LBL_COMPETENCIES'),
-  description: () => description[(locale.value as 'bg' | 'en')],
   ogTitle: () => t('LBL_COMPETENCIES'),
   ogDescription: () => description[(locale.value as 'bg' | 'en')],
   ogUrl: () => `https://thoughts.bizarre.how/${locale.value}/competence`,
 });
 
-useJsonLdBreadcrumbs(breadcrumbItems);
+useJsonLdBreadcrumbs(breadcrumbData);
 </script>
 
 <template>

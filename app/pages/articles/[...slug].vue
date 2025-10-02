@@ -19,7 +19,7 @@ const { data: surroundingArticles } = await useLazyAsyncData(
   }, { server: true }
 );
 
-const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
+const breadcrumbItems = computed(() => [
   {
     label: t('LBL_HOME'),
     icon: 'i-heroicons-home',

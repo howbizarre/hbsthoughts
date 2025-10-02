@@ -64,6 +64,12 @@ const breadcrumbItems = computed<BreadcrumbItem[]>(() => [
   }
 ]);
 
+const breadcrumbData = computed(() => breadcrumbItems.value.map(item => ({
+  label: item.label,
+  to: item.to,
+  icon: typeof item.icon === 'string' ? item.icon : undefined
+})));
+
 useSeoMeta({
   title: () => title.value,
   description: () => description.value,
@@ -83,7 +89,7 @@ const mappedArticles = computed(() =>
 );
 
 useJsonLdBlogListing(title, description, mappedArticles, locale);
-useJsonLdBreadcrumbs(breadcrumbItems);
+useJsonLdBreadcrumbs(breadcrumbData);
 </script>
 
 <template>
