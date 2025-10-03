@@ -6,13 +6,15 @@
   --breakpoint-xs: 30rem;
 }
 
-html { @apply size-full; }
+html {
+  @apply size-full;
+}
 
 body {
   @apply min-h-dvh min-w-full
          text-gray-700 dark:text-gray-300 relative font-sans
          bg-[url('/images/micron.svg')] dark:bg-[url('/images/gulf.svg')]
-         bg-[#f9f4ff]! dark:bg-[#02013e]!
+         bg-[#f9f4ff]! /*d7f2fe, f9f4ff*/ dark:bg-[#02012c]! /*04124f, 02013e, 03023d*/
          bg-no-repeat bg-auto
          bg-[right_-16rem_bottom_10rem]
          sm:bg-[right_-12rem_bottom_13rem]
@@ -42,7 +44,11 @@ h6,
 
 @layer components {
   .excerpt-card {
-    @apply p-5! rounded-2xl bg-gray-500/5 relative backdrop-blur-sm border border-gray-500/10 dark:border-gray-400/10 hover:bg-gray-500/10 dark:hover:bg-gray-400/10 transition-colors duration-200 ease-in-out;
+    @apply p-5! rounded-2xl
+         bg-cyan-500/5
+         hover:bg-cyan-600/10
+         dark:hover:bg-cyan-300/10
+           relative backdrop-blur-sm transition-colors duration-200 ease-in-out;
   }
 
   .h-line {
