@@ -65,19 +65,19 @@ The site will be available at `http://localhost:7410`
 
 ## 📝 Available Scripts
 
-- `npm run dev` - Start development server on port 7410
-- `npm run build` - Build the application for production
-- `npm run generate` - Generate static files
-- `npm run preview` - Build and preview with Wrangler
-- `npm run deploy` - Build and deploy to Cloudflare Workers
+- `npm run dev`        - Start development server on port 7410
+- `npm run build`      - Build the application for production
+- `npm run generate`   - Generate static files
+- `npm run preview`    - Build and preview with Wrangler
+- `npm run deploy`     - Build and deploy to Cloudflare Workers
 - `npm run cf-typegen` - Generate Cloudflare types
 
 ## 📁 Project Structure
 
 ```
-├── app/                    # Nuxt app directory
-│   ├── components/         # Vue components
-│   ├── composables/        # Vue composables (JSON-LD, utilities)
+├── app/                   # Nuxt app directory
+│   ├── components/        # Vue components
+│   ├── composables/       # Vue composables (JSON-LD, utilities)
 │   ├── layouts/           # Layout components
 │   ├── pages/             # Page components and routing
 │   └── assets/            # Static assets
@@ -96,8 +96,8 @@ Articles are written in Markdown and stored in the `content/` directory:
 
 - `/content/en/articles/` - English articles
 - `/content/bg/articles/` - Bulgarian articles
-- `/content/en/static/` - English static pages (like help pages)
-- `/content/bg/static/` - Bulgarian static pages (like help pages)
+- `/content/en/static/`   - English static pages (like help pages)
+- `/content/bg/static/`   - Bulgarian static pages (like help pages)
 
 ### Article Format
 
