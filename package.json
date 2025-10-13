@@ -50,6 +50,6 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"nitro-cloudflare-dev": "^0.2.2",
 		"nitropack": "^2.12.6",
-		"wrangler": "^4.37.1"
+		"wrangler": "^4.42.2"
 	}
 }
