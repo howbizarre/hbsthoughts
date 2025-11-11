@@ -1,5 +1,5 @@
 <template>
-  <footer class="max-w-3xl w-full mx-auto border-t-[1px] border-t-gray-50 dark:border-t-gray-700 rounded-2xl mt-16">
+  <footer class="max-w-3xl w-full mx-auto border-t border-t-gray-50 dark:border-t-gray-700 rounded-2xl mt-16">
     <div class="flex items-center justify-between rounded-2xl w-full px-1 border-t border-t-gray-700/25 dark:border-t-gray-50/25">
       <p class="p-3 m-0 flex items-center gap-2">
         <strong>🖖</strong>

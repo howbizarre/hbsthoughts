@@ -37,4 +37,6 @@ For translation from my native language, Bulgarian, to English, I use some AI he
   <a href="/llms.txt" target="_blank" rel="noopener">Short index</a> of the site to assist Language Models.
   <br />
   <a href="/llms-full.txt" target="_blank" rel="noopener">Extended index</a> of the site, which includes the content of the articles.
+  <br />
+  <a href="/mcp" target="_blank" rel="noopener">MCP Server</a> with a tool <code>/asc</code> for returning answers related to the articles.
 </p>

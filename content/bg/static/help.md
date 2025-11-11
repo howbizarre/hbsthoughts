@@ -33,4 +33,6 @@
   <a href="/llms.txt" target="_blank" rel="noopener">Кратък индекс</a> на сайта, за да подпомогне Езиковите модели.
   <br />
   <a href="/llms-full.txt" target="_blank" rel="noopener">Разширен индекс</a> на сайта, който включва и съдържанието на статиите.
+  <br />
+  <a href="/mcp" target="_blank" rel="noopener">MCP Сървър</a> с един инструмент <code>/asc</code> за връщане на отговори свързани със статиите.
 </p>

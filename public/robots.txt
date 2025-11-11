@@ -11,3 +11,4 @@ Sitemap: https://thoughts.bizarre.how/sitemap.xml
 # Site content indexes
 # Llm-index: https://thoughts.bizarre.how/llms.txt
 # Llm-index: https://thoughts.bizarre.how/llms-full.txt
+# MCP-server: https://thoughts.bizarre.how/mcp
