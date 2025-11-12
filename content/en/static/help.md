@@ -33,4 +33,6 @@ For translation from my native language, Bulgarian, to English, I use some AI he
 
 ## A bit about Artificial Intelligence
 
-[Short index](/llms.txt){rel="noopener" target="_blank"} of the site to assist Language Models. :br Extended index(/llms-full.txt){rel="noopener" target="\_blank"} of the site, which includes the content of the articles. :br MCP Server(/mcp){rel="noopener" target="\_blank"} with a tool `/asc` for returning answers related to the articles.
+[**Short index**](/llms.txt){rel="noopener" target="_blank"} of the site to assist Language Models. :br
+[**Extended index**](/llms-full.txt){rel="noopener" target="_blank"} of the site, which includes the content of the articles. :br
+[**MCP Server**](/mcp){rel="noopener" target="_blank"} with a tool `/asc` for returning answers related to the articles.
