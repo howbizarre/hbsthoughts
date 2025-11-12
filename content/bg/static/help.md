@@ -23,16 +23,10 @@
 
 ## Кой съм аз ли?
 
->I am a Front-end Senpai, who strictly follows the W3Code of Bushido!.
+> I am a Front-end Senpai, who strictly follows the W3Code of Bushido!.
 
 Обичам да използвам тази фраза. А иначе, аз съм **Коста**, още познат като **HowBizarre**, и заедно със семейството си работя и живея в **София**, **България**. Може да разгледате профилите ми в [GitHub](https://github.com/howbizarre), [X](https://x.com/howbizarre) и [LinkedIn](https://www.linkedin.com/in/howbizarre).
 
 ## И малко за Изкуствения Интелект
 
-<p>
-  <a href="/llms.txt" target="_blank" rel="noopener">Кратък индекс</a> на сайта, за да подпомогне Езиковите модели.
-  <br />
-  <a href="/llms-full.txt" target="_blank" rel="noopener">Разширен индекс</a> на сайта, който включва и съдържанието на статиите.
-  <br />
-  <a href="/mcp" target="_blank" rel="noopener">MCP Сървър</a> с един инструмент <code>/asc</code> за връщане на отговори свързани със статиите.
-</p>
+[Кратък индекс](/llms.txt){rel="noopener" target="_blank"} на сайта, за да подпомогне Езиковите модели. :br[Разширен индекс](/llms-full.txt){rel="noopener" target="_blank"} на сайта, който включва и съдържанието на статиите. :br[MCP Сървър](/mcp){rel="noopener" target="_blank"} с един инструмент `/asc` за връщане на отговори свързани със статиите.

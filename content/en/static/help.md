@@ -23,20 +23,14 @@ The main technologies I write about are mostly focused on front-end, but there w
 
 ## Who am I?
 
->I am a Front-end Senpai, who strictly follows the W3Code of Bushido!.
+> I am a Front-end Senpai, who strictly follows the W3Code of Bushido!.
 
 I like to use that phrase. Otherwise, I am **Kosta**, also known as **HowBizarre**, and together with my family, I work and live in **Sofia**, **Bulgaria**. You can check out my profiles on [GitHub](https://github.com/howbizarre), [X](https://x.com/howbizarre) and [LinkedIn](https://www.linkedin.com/in/howbizarre).
 
 ## FYI
 
-For translation from my native language, Bulgarian, to English, I use some AI helpers such as **DeepL**, **CoPilot**, **Gemini**, and **Google Translate** with corrections, and adjustments. I am not a native English speaker, so please let me know if you find any mistakes. Thank you!
+For translation from my native language, Bulgarian, to English, I use some AI helpers such as **DeepL**, **CoPilot**, **Gemini**, and **Google Translate** with corrections and adjustments. I am not a native English speaker, so please let me know if you find any mistakes. Thank you!
 
 ## A bit about Artificial Intelligence
 
-<p>
-  <a href="/llms.txt" target="_blank" rel="noopener">Short index</a> of the site to assist Language Models.
-  <br />
-  <a href="/llms-full.txt" target="_blank" rel="noopener">Extended index</a> of the site, which includes the content of the articles.
-  <br />
-  <a href="/mcp" target="_blank" rel="noopener">MCP Server</a> with a tool <code>/asc</code> for returning answers related to the articles.
-</p>
+[Short index](/llms.txt){rel="noopener" target="_blank"} of the site to assist Language Models. :br[Extended index](/llms-full.txt){rel="noopener" target="_blank"} of the site, which includes the content of the articles. :br[MCP Server](/mcp){rel="noopener" target="_blank"} with a tool `/asc` for returning answers related to the articles.
