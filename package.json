@@ -34,7 +34,7 @@
 	},
 	"dependencies": {
 		"@nuxt/content": "^3.7.1",
-		"@nuxt/ui": "^4.0.0",
+		"@nuxt/ui": "^4.2.1",
 		"@nuxtjs/i18n": ">=10.1.0 <11.0.0",
 		"@nuxtjs/sitemap": "^7.4.3",
 		"better-sqlite3": "^12.2.0",
