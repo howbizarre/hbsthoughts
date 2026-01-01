@@ -1,6 +1,6 @@
 {
 	"name": "hbsthoughts",
-	"version": "1.0.6",
+	"version": "1.0.61",
 	"description": "Articles mostly about Vue, Nuxt, TailwindCSS, and TypeScript, but not limited to — more on the front-end and less on the back-end.",
 	"keywords": [
 		"nuxt4",
