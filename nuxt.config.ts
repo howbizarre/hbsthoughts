@@ -40,7 +40,8 @@ export default defineNuxtConfig({
 
     prerender: {
       routes: ['/'],
-      crawlLinks: true
+      crawlLinks: true,
+      ignore: ['/mcp', '/cms/**', '/llms.txt', '/llms-full.txt']
     }
   },
 
@@ -108,7 +109,7 @@ export default defineNuxtConfig({
   },
 
   studio: {
-    route: '/cms', // default: '/_studio'
+    route: '/cms' // default: '/_studio'
   },
 
   llms: {
