@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     payloadExtraction: false // optimize for SSR
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxt/content', 'nuxt-llms'],
+  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxt/content', 'nuxt-llms', 'nuxt-studio'],
 
   css: ['~/assets/css/main.css'],
 
@@ -36,6 +36,11 @@ export default defineNuxtConfig({
     cloudflare: {
       deployConfig: true,
       nodeCompat: true
+    },
+
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
     }
   },
 
@@ -100,6 +105,10 @@ export default defineNuxtConfig({
 
   sitemap: {
     zeroRuntime: true
+  },
+
+  studio: {
+    route: '/cms', // default: '/_studio'
   },
 
   llms: {
