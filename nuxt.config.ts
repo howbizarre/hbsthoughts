@@ -98,6 +98,10 @@ export default defineNuxtConfig({
     }
   },
 
+  sitemap: {
+    zeroRuntime: true
+  },
+
   llms: {
     domain: 'https://thoughts.bizarre.how',
     title: "HB's Thoughts",
