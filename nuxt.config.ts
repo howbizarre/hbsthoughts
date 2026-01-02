@@ -36,6 +36,12 @@ export default defineNuxtConfig({
     cloudflare: {
       deployConfig: true,
       nodeCompat: true
+    },
+
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true,
+      ignore: ['/mcp', '/cms/**', '/llms.txt', '/llms-full.txt']
     }
   },
 
@@ -46,6 +52,18 @@ export default defineNuxtConfig({
       rollupOptions: {
         output: {
           manualChunks: (id) => {
+            if (id.includes('node_modules/vue/') || id.includes('node_modules/@vue/')) {
+              return 'vue-core';
+            }
+
+            if (id.includes('node_modules/vue-router/')) {
+              return 'vue-router';
+            }
+
+            if (id.includes('node_modules/axios/')) {
+              return 'axios';
+            }
+
             if (id.includes('node_modules')) {
               return 'vendor';
             }
@@ -102,9 +120,6 @@ export default defineNuxtConfig({
           }
         }
       }
-    },
-    preview: {
-      api: 'https://api.nuxt.studio'
     }
   },
 
@@ -113,7 +128,13 @@ export default defineNuxtConfig({
   },
 
   studio: {
-    route: '/cms' // default: '/_studio'
+    route: '/cms', // default: '/_studio'
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'howbizarre',
+      repo: 'hbsthoughts',
+      branch: 'master'
+    }
   },
 
   llms: {
