@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     payloadExtraction: false // optimize for SSR
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxt/content', 'nuxt-llms'],
+  modules: ['nitro-cloudflare-dev', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxt/content', 'nuxt-llms', 'nuxt-studio'],
 
   css: ['~/assets/css/main.css'],
 
@@ -36,12 +36,40 @@ export default defineNuxtConfig({
     cloudflare: {
       deployConfig: true,
       nodeCompat: true
+    },
+
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true,
+      ignore: ['/mcp', '/cms/**', '/llms.txt', '/llms-full.txt']
     }
   },
 
   vite: {
     build: {
-      sourcemap: false
+      sourcemap: false,
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('node_modules/vue/') || id.includes('node_modules/@vue/')) {
+              return 'vue-core';
+            }
+
+            if (id.includes('node_modules/vue-router/')) {
+              return 'vue-router';
+            }
+
+            if (id.includes('node_modules/axios/')) {
+              return 'axios';
+            }
+
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          }
+        }
+      }
     },
     server: {
       hmr: {
@@ -92,14 +120,21 @@ export default defineNuxtConfig({
           }
         }
       }
-    },
-    preview: {
-      api: 'https://api.nuxt.studio'
     }
   },
 
   sitemap: {
     zeroRuntime: true
+  },
+
+  studio: {
+    route: '/cms', // default: '/_studio'
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'howbizarre',
+      repo: 'hbsthoughts',
+      branch: 'master'
+    }
   },
 
   llms: {
