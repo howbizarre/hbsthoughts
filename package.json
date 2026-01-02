@@ -24,7 +24,7 @@
 		"url": "git+https://github.com/hristobotev/hbsthoughts.git"
 	},
 	"scripts": {
-		"build": "NODE_OPTIONS='--max-old-space-size=4096' nuxt build",
+		"build": "npx cross-env NODE_OPTIONS=--max-old-space-size=4096 nuxt build",
 		"dev": "nuxt dev --port 7410",
 		"generate": "nuxt generate",
 		"preview": "npm run build && wrangler dev",
