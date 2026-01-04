@@ -11,7 +11,7 @@ You may think of it as the category of the article. An article has only one comp
 
 ## What are tags?
 
-Tags, are an easy way to filter the articles you see in a given field, technology, idea, etc.
+[**Tags**](/en/tag "Tags or labels"), are an easy way to filter the articles you see in a given field, technology, idea, etc.
 
 I often write about a given technology or a set of technologies. Then the tags indicate what these technologies are. Sometimes they won't be related to technology, but to my thoughts or interesting things from the network or the life around me that I note.
 

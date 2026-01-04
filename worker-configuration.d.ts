@@ -3,6 +3,9 @@
 // Runtime types generated with workerd@1.20251210.0 2025-08-01 
 declare namespace Cloudflare {
 	interface Env {
+		STUDIO_GITHUB_CLIENT_ID: string;
+		STUDIO_GITHUB_CLIENT_SECRET: string;
+		STUDIO_GITHUB_MODERATORS: string;
 		DB: D1Database;
 	}
 }
