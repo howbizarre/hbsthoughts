@@ -36,13 +36,7 @@ export default defineNuxtConfig({
     cloudflare: {
       deployConfig: true,
       nodeCompat: true
-    },
-
-    // prerender: {
-    //   routes: ['/'],
-    //   crawlLinks: true,
-    //   ignore: ['/mcp', '/cms/**', '/llms.txt', '/llms-full.txt']
-    // }
+    }
   },
 
   vite: {

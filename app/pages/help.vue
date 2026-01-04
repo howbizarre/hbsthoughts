@@ -9,10 +9,10 @@ const { data: seo } = await useLazyAsyncData('content-seo-help', () => {
 });
 
 const { data: help } = await useLazyAsyncData(
-  () => `${locale.value}-static-help`,
+  () => `${locale.value}-help`,
   async () => {
-    const collectionName = `${locale.value}_static` as 'bg_static' | 'en_static';
-    return await queryCollection(collectionName).path(`/${locale.value}/static/help`).first();
+    const collectionName = `${locale.value}_help` as 'bg_help' | 'en_help';
+    return await queryCollection(collectionName).path(`/${locale.value}/help`).first();
   }, {
   server: true,
   watch: [locale]

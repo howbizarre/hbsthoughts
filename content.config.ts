@@ -29,13 +29,13 @@ export default defineContentConfig({
       })
     }),
 
-    bg_static: defineCollection({
+    bg_help: defineCollection({
       type: 'page',
-      source: 'bg/static/*.md'
+      source: 'bg/help.md'
     }),
-    en_static: defineCollection({
+    en_help: defineCollection({
       type: 'page',
-      source: 'en/static/*.md'
+      source: 'en/help.md'
     }),
 
     bg_articles: defineCollection({
