@@ -9,7 +9,10 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const sections = await queryCollectionSearchSections(event as any, collectionName as any);
+  const sections = await queryCollectionSearchSections(
+    event as any,
+    collectionName as any
+  );
 
   return sections;
 });
