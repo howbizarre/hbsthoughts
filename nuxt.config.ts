@@ -38,11 +38,11 @@ export default defineNuxtConfig({
       nodeCompat: true
     },
 
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true,
-      ignore: ['/mcp', '/cms/**', '/llms.txt', '/llms-full.txt']
-    }
+    // prerender: {
+    //   routes: ['/'],
+    //   crawlLinks: true,
+    //   ignore: ['/mcp', '/cms/**', '/llms.txt', '/llms-full.txt']
+    // }
   },
 
   vite: {
