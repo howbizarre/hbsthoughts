@@ -33,8 +33,8 @@ For translation from my native language, Bulgarian, to English, I use some AI he
 
 ## A bit about Artificial Intelligence
 
-[**Short index**](/llms.txt "Shot index of site data"){:rel='["noopener"]' target="_blank"} of the site to assist Language Models.
+[**Short index**](/llms.txt "Shot index of site data"){:rel="noopener" target="_blank"} of the site to assist Language Models.
 
-[**An extended index**](/llms-full.txt "Extended index of site data"){:rel='["noopener"]' target="_blank"} of the site, which includes the content of the articles.
+[**An extended index**](/llms-full.txt "Extended index of site data"){:rel="noopener" target="_blank"} of the site, which includes the content of the articles.
 
-[**MCP Server**](/mcp "Model Context Protocol for sajt data"){:rel='["noopener"]' target="_blank"} with a tool `/asc` for returning answers related to the articles.
+[**MCP Server**](/mcp "Model Context Protocol for sajt data"){:rel="noopener" target="_blank"} with a tool `/asc` for returning answers related to the articles.
