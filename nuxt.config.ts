@@ -36,6 +36,15 @@ export default defineNuxtConfig({
     cloudflare: {
       deployConfig: true,
       nodeCompat: true
+    },
+
+    devErrorHandler: (error, event) => {
+      // Suppress 404 errors for /_nuxt/ directory requests (HMR noise)
+      if (error.statusCode === 404 && event.path === '/_nuxt/') {
+        event.node.res.statusCode = 204;
+        event.node.res.end();
+        return;
+      }
     }
   },
 
