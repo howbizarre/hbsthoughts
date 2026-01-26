@@ -1,5 +1,4 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content';
-import { asSitemapCollection } from '@nuxtjs/sitemap/content';
 
 const articleSchema = z.object({
   title: z.string().min(3).max(100),
@@ -47,13 +46,6 @@ export default defineContentConfig({
       type: 'page',
       source: 'en/articles/*.md',
       schema: articleSchema
-    }),
-
-    sitemap: defineCollection(
-      asSitemapCollection({
-        type: 'page',
-        source: '**/*.md'
-      })
-    )
+    })
   }
 });
