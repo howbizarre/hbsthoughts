@@ -129,7 +129,9 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    zeroRuntime: true
+    sources: [
+      '/api/__sitemap__/urls'
+    ]
   },
 
   studio: {
