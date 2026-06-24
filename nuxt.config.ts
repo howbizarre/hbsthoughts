@@ -81,6 +81,12 @@ export default defineNuxtConfig({
         clientPort: 7410,
         port: 7410
       }
+    },
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+      ]
     }
   },
 
